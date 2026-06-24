@@ -1,6 +1,7 @@
 # Chapter 9: Error Detection and Handling
 
 ## 9.1 Introduction to testing your code
+[Introduction to testing your code](https://www.learncpp.com/cpp-tutorial/introduction-to-testing-your-code/)
 
 - **Testing** checks whether code behaves as intended for representative inputs.
 - Good tests cover:
@@ -47,6 +48,7 @@ bool isEven(int x)
 **Takeaway:** testing is not optional polish; it is part of writing correct code.
 
 ## 9.2 Code coverage
+[Code coverage](https://www.learncpp.com/cpp-tutorial/code-coverage/)
 
 - **Code coverage** measures how much of your code is exercised by tests.
 - Common intuition: if code never runs during testing, bugs there can survive unnoticed.
@@ -87,6 +89,7 @@ bool isSmallPositive(int x)
 **Practical rule:** use coverage to discover what you forgot to test, then add meaningful tests.
 
 ## 9.3 Common semantic errors in C++
+[Common semantic errors in C++](https://www.learncpp.com/cpp-tutorial/common-semantic-errors-in-c/)
 
 - **Semantic errors** compile successfully but do the wrong thing.
 - These are often more dangerous than syntax errors because the program still runs.
@@ -139,6 +142,7 @@ if (x = 0) // bug: assignment, not comparison
 **Takeaway:** if the program “works” but gives wrong results, suspect a semantic error first.
 
 ## 9.4 Detecting and handling errors
+[Detecting and handling errors](https://www.learncpp.com/cpp-tutorial/detecting-and-handling-errors/)
 
 - An **error** is a condition that prevents correct work.
 - Typical choices when an error is detected:
@@ -190,6 +194,7 @@ double calculateSqrt(double x)
 **Rule of thumb:** expected problems should be reported cleanly; impossible states should be treated as bugs.
 
 ## 9.5 std::cin and handling invalid input
+[std::cin and handling invalid input](https://www.learncpp.com/cpp-tutorial/stdcin-and-handling-invalid-input/)
 
 Input with `std::cin` can fail in two main ways:
 
@@ -242,6 +247,7 @@ If the user enters `5*7`, `5` may be extracted successfully and `*7` remains. Cl
 **Best practice:** after formatted input, consume leftover input when you require a clean next read.
 
 ## 9.6 assert and static_assert
+[Assert and static_assert](https://www.learncpp.com/cpp-tutorial/assert-and-static_assert/)
 
 - `assert()` checks a condition at **runtime** in debug builds.
 - `static_assert` checks a condition at **compile time**.

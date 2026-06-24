@@ -10,6 +10,7 @@ Older LearnCpp revisions split out some related topics (destructors, pointers an
 - Reach for raw `new` / `delete` only when teaching, interoperating, or implementing low-level ownership.
 
 ## 19.1 Dynamic memory allocation with new and delete
+[Dynamic memory allocation with new and delete](https://www.learncpp.com/cpp-tutorial/dynamic-memory-allocation-with-new-and-delete/)
 
 - Dynamic allocation gives an object a lifetime independent of the current scope.
 - Use it when:
@@ -46,7 +47,8 @@ int main()
   - **observer** (just points at something owned elsewhere)
 - Avoid mixing those roles.
 
-## 19.2 The heap, stack, and free store
+## 20.2 The stack and the heap
+[The stack and the heap](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
 - **Stack / automatic storage**
   - locals and parameters
@@ -79,7 +81,8 @@ int main()
 - if one heap object needs ownership, try `std::unique_ptr`
 - only then consider raw `new`
 
-## 19.3 Dynamic arrays
+## 19.2 Dynamically allocating arrays
+[Dynamically allocating arrays](https://www.learncpp.com/cpp-tutorial/dynamically-allocating-arrays/)
 
 - Use `new[]` when the array length is known only at runtime.
 - Destroy with `delete[]`, not `delete`.
@@ -122,7 +125,8 @@ int main()
 - `int* const p` -> `p` itself cannot point elsewhere
 - `const int* const p` -> neither can change through `p`
 
-## 19.4 std::vector and dynamic arrays
+## 16.1 Introduction to containers and arrays
+[Introduction to containers and arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/)
 
 - `std::vector<T>` is the standard dynamic array type.
 - It manages heap allocation automatically.
@@ -209,7 +213,8 @@ int* typed{ static_cast<int*>(raw) };
 // std::cout << *typed << '\n';
 ```
 
-## 19.6 std::unique_ptr
+## 22.5 std::unique_ptr
+[std::unique_ptr](https://www.learncpp.com/cpp-tutorial/stdunique_ptr/)
 
 - `std::unique_ptr<T>` is the default smart pointer for exclusive ownership.
 - It owns one object and deletes it automatically.
@@ -249,7 +254,8 @@ Useful members:
 - `p.release()` -> give up ownership without deleting
 - `p.reset()` -> replace or clear owned object
 
-## 19.7 When and when not to use new, delete, and smart pointers
+## 22.1 Introduction to smart pointers and move semantics
+[Introduction to smart pointers and move semantics](https://www.learncpp.com/cpp-tutorial/introduction-to-smart-pointers-move-semantics/)
 
 **Prefer these first**
 - plain local objects

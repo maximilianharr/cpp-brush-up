@@ -8,6 +8,7 @@ Current learncpp.com Chapter 17 has 17.1–17.8 below. Some older refreshers spl
 - **C-style arrays**: mainly legacy code, low-level interop, string literals / C APIs.
 
 ## 17.1 Introduction to std::array
+[Introduction to std::array](https://www.learncpp.com/cpp-tutorial/introduction-to-stdarray/)
 
 - `std::array<T, N>` is a fixed-size container in `<array>`.
 - The length `N` is part of the type.
@@ -48,7 +49,10 @@ int main()
 - Variable size -> `std::vector`
 - C interoperability / legacy ABI -> C-style array or pointer
 
-## 17.2 Aggregate initialization for std::array
+## 17.1, 17.4, 17.5 Aggregate initialization, brace elision, and arrays of references for std::array
+[Introduction to std::array](https://www.learncpp.com/cpp-tutorial/introduction-to-stdarray/) (aggregate initialization)
+[std::array of class types, and brace elision](https://www.learncpp.com/cpp-tutorial/stdarray-of-class-types-and-brace-elision/) (brace elision)
+[Arrays of references via std::reference_wrapper](https://www.learncpp.com/cpp-tutorial/arrays-of-references-via-stdreference_wrapper/) (arrays of references)
 
 - `std::array` is usually initialized with a brace-enclosed list.
 - Missing elements are value-initialized.
@@ -98,7 +102,9 @@ std::array<std::reference_wrapper<int>, 3> refs{ a, b, c };
 refs[1].get() = 42; // modifies b
 ```
 
-## 17.3 Accessing array elements and getting array length
+## 17.2, 17.6 std::array length and indexing, and enumerations as indices
+[std::array length and indexing](https://www.learncpp.com/cpp-tutorial/stdarray-length-and-indexing/)
+[std::array and enumerations](https://www.learncpp.com/cpp-tutorial/stdarray-and-enumerations/) (using enumerations as indices)
 
 - Use `arr[index]` for fast unchecked access.
 - Use `arr.at(index)` when you want bounds checking.
@@ -152,7 +158,8 @@ int main()
 }
 ```
 
-## 17.4 Passing std::array to a function and returning arrays
+## 17.3 Passing and returning std::array
+[Passing and returning std::array](https://www.learncpp.com/cpp-tutorial/passing-and-returning-stdarray/)
 
 - Pass by `const&` to avoid copying.
 - Pass by non-const reference to modify.
@@ -195,7 +202,8 @@ int main()
 - Built-in arrays usually decay to pointers when passed to functions.
 - That is one of the main reasons `std::array` is safer.
 
-## 17.5 Introduction to C-style arrays
+## 17.7 Introduction to C-style arrays
+[Introduction to C-style arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-c-style-arrays/)
 
 - A C-style array uses built-in syntax: `T name[length]`.
 - Length must be a constant expression in standard C++.
@@ -232,7 +240,8 @@ int main()
 - you are working with C libraries
 - you are maintaining existing legacy code
 
-## 17.6 Aggregate initialization for C-style arrays
+## 17.7 Aggregate initialization for C-style arrays
+[Introduction to C-style arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-c-style-arrays/) (aggregate initialization is covered within this same lesson)
 
 - C-style arrays are also aggregates.
 - Brace initialization works similarly:
@@ -266,7 +275,11 @@ int scores[maxStudents]{};
 char name[]{ "Alex" }; // 'A' 'l' 'e' 'x' '\0'
 ```
 
-## 17.7 Accessing and manipulating C-style arrays
+## 17.8, 17.9, 17.10, 17.11 Accessing and manipulating C-style arrays
+[C-style array decay](https://www.learncpp.com/cpp-tutorial/c-style-array-decay/) (decay)
+[Pointer arithmetic and subscripting](https://www.learncpp.com/cpp-tutorial/pointer-arithmetic-and-subscripting/) (pointer arithmetic)
+[C-style strings](https://www.learncpp.com/cpp-tutorial/c-style-strings/) (C-style strings)
+[C-style string symbolic constants](https://www.learncpp.com/cpp-tutorial/c-style-string-symbolic-constants/) (string symbolic constants)
 
 - `arr[i]` works for C-style arrays too.
 - But built-in arrays often **decay to pointers**:
@@ -339,7 +352,10 @@ constexpr std::string_view title{ "Chapter 17" };
 constexpr const char* cTitle{ "Chapter 17" };
 ```
 
-## 17.8 Best practices for arrays
+## 17.8, 17.12, 17.13 Best practices for arrays, and multidimensional arrays
+[Multidimensional C-style Arrays](https://www.learncpp.com/cpp-tutorial/multidimensional-c-style-arrays/) (multidimensional C-style arrays)
+[Multidimensional std::array](https://www.learncpp.com/cpp-tutorial/multidimensional-stdarray/) (multidimensional std::array)
+(no single page covers the general "best practices for arrays" bullets below; closest is the Chapter 17 summary/quiz page)
 
 - Prefer `std::array` over C-style arrays for fixed-size collections.
 - Prefer `std::vector` when the length can vary.

@@ -1,6 +1,7 @@
 # Chapter 13: Compound Types: Enums and Structs
 
 ## 13.1 Introduction to program-defined (user-defined) types
+[Introduction to program-defined (user-defined) types](https://www.learncpp.com/cpp-tutorial/introduction-to-program-defined-user-defined-types/)
 - C++ has built-in types (`int`, `double`, `char`) and program-defined types you create.
 - Chapter 13 centers on two simple custom types:
   - **enumerations**: a fixed set of named values
@@ -23,6 +24,7 @@ Point playerPos { 10, 20 };
 ```
 
 ## 13.2 Unscoped enumerations
+[Unscoped enumerations](https://www.learncpp.com/cpp-tutorial/unscoped-enumerations/)
 - Unscoped enums use `enum`.
 - Enumerators are named integral constants.
 - If you do not assign values, they start at `0` and increment by `1`.
@@ -44,6 +46,7 @@ int value { shirt }; // implicit conversion: green -> 1
 - Main downside: name pollution and weak type safety.
 
 ## 13.3 Unscoped enumerator integral conversions
+[Unscoped enumerator integral conversions](https://www.learncpp.com/cpp-tutorial/unscoped-enumerator-integral-conversions/)
 - Each enumerator has an underlying integral value.
 - You can assign explicit values, including gaps.
 - Unscoped enums convert implicitly to integral types.
@@ -68,6 +71,7 @@ pet = static_cast<Pet>(4); // okay syntactically
 - Treat enum-to-int as a serialization/detail boundary, not everyday logic.
 
 ## 13.4 Converting an enumeration to and from a string
+[Converting an enumeration to and from a string](https://www.learncpp.com/cpp-tutorial/converting-an-enumeration-to-and-from-a-string/)
 - C++ does not automatically stringify enums.
 - The common approach is a `switch` for enum-to-string.
 - For string-to-enum, parse known inputs and reject invalid ones.
@@ -101,6 +105,7 @@ std::optional<Color> parseColor(std::string_view text)
 ```
 
 ## 13.5 Introduction to overloading the I/O operators
+[Introduction to overloading the I/O operators](https://www.learncpp.com/cpp-tutorial/introduction-to-overloading-the-i-o-operators/)
 - Overload `<<` to print your type naturally.
 - Overload `>>` to read your type naturally.
 - Return the stream by reference so chaining works.
@@ -140,6 +145,7 @@ std::istream& operator>>(std::istream& in, Color& color)
 ```
 
 ## 13.6 Scoped enumerations (enum classes)
+[Scoped enumerations (enum classes)](https://www.learncpp.com/cpp-tutorial/scoped-enumerations-enum-classes/)
 - Scoped enums use `enum class`.
 - Enumerators stay inside the enum’s scope (`Color::red`).
 - They do **not** implicitly convert to integers.
@@ -164,6 +170,7 @@ int n { static_cast<int>(paint) }; // explicit and obvious
 - Big refresher point: **`enum class` avoids accidental mixing with ints**.
 
 ## 13.7 Introduction to structs, members, and member selection
+[Introduction to structs, members, and member selection](https://www.learncpp.com/cpp-tutorial/introduction-to-structs-members-and-member-selection/)
 - A `struct` groups related values into one named type.
 - Struct members are `public` by default.
 - Use the member access operator `.` to select a member.
@@ -187,6 +194,7 @@ joe.wage = 35.0;
 - `struct` vs `class`: same core capability; default access differs (`public` vs `private`).
 
 ## 13.8 Struct aggregate initialization
+[Struct aggregate initialization](https://www.learncpp.com/cpp-tutorial/struct-aggregate-initialization/)
 - Many structs are **aggregates**, meaning they can be brace-initialized member-by-member.
 - Members initialize in **declaration order**, not visual order in the brace list.
 - Omitted members are value-initialized or use their default member initializers.
@@ -213,6 +221,7 @@ Rectangle r { {0, 0}, {640, 480} };
 - Keep the member order stable; callers depend on it during aggregate initialization.
 
 ## 13.9 Default member initialization
+[Default member initialization](https://www.learncpp.com/cpp-tutorial/default-member-initialization/)
 - Members can be given defaults directly inside the struct.
 - Those defaults are used when a member is omitted during initialization.
 - Explicit initializer values override defaults.
@@ -234,6 +243,7 @@ Settings c { 1280 };            // 1280, 600, false
 - Prefer default member initializers over repeating the same setup everywhere.
 
 ## 13.10 Passing and returning structs
+[Passing and returning structs](https://www.learncpp.com/cpp-tutorial/passing-and-returning-structs/)
 - Pass small structs by value when copying is cheap and intended.
 - Pass larger structs by `const&` when you only need to read them.
 - Pass by non-const reference when you need to modify the caller’s object.
@@ -267,6 +277,7 @@ Employee makeEmployee(int id, std::string name)
 - Refresher rule: default to `const&` for nontrivial read-only structs.
 
 ## 13.11 Struct miscellany
+[Struct miscellany](https://www.learncpp.com/cpp-tutorial/struct-miscellany/)
 - Structs copy and assign memberwise by default.
 - That default behavior is often exactly what you want for plain data types.
 - A struct can contain other structs, arrays, containers, and enums.
@@ -289,6 +300,7 @@ b.second = 42; // changes only b
 - Plain structs are strongest when they stay simple and unsurprising.
 
 ## 13.12 Member selection with pointers and references
+[Member selection with pointers and references](https://www.learncpp.com/cpp-tutorial/member-selection-with-pointers-and-references/)
 - References use the normal `.` operator.
 - Pointers use `->`, which is shorthand for `(*ptr).member`.
 - This comes up constantly when passing structs by reference/pointer or using dynamic allocation.
@@ -315,6 +327,7 @@ ptr->id = 2;          // pointer uses ->
 - Quick memory aid: **reference = object alias**, **pointer = address**.
 
 ## 13.13 Class templates
+[Class templates](https://www.learncpp.com/cpp-tutorial/class-templates/)
 - A class template lets one struct/class work with many element types.
 - Template parameters stand in for real types until instantiation.
 - Each unique template argument list creates a distinct type.
@@ -337,6 +350,7 @@ Pair<std::string> names { "Ada", "Bjarne" };
 - Think: “functions can be templated; types can be templated too.”
 
 ## 13.14 Class template argument deduction (CTAD) and deduction guides
+[Class template argument deduction (CTAD) and deduction guides](https://www.learncpp.com/cpp-tutorial/class-template-argument-deduction-ctad-and-deduction-guides/)
 - Since C++17, the compiler can often deduce class template arguments from initialization.
 - CTAD removes some repetitive `<T>` spelling.
 - When deduction does not do what you want, add a **deduction guide**.

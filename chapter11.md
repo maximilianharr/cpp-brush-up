@@ -3,6 +3,7 @@
 Current learncpp.com Chapter 11 covers 11.1–11.9 below. Some older refreshers mention deleted functions or a separate “multiple template types” section; those ideas are folded into the relevant sections here.
 
 ## 11.1 Introduction to function overloading
+[Introduction to function overloading](https://www.learncpp.com/cpp-tutorial/introduction-to-function-overloading/)
 
 - **Function overloading** lets multiple functions share the same name when their **parameter lists differ**.
 - This gives one conceptual operation a single name (`print`, `min`, `swap`) across different argument types.
@@ -32,6 +33,7 @@ int main()
 - Overloading improves readability, but only when the functions really represent the same action.
 
 ## 11.2 Function overload differentiation
+[Function overload differentiation](https://www.learncpp.com/cpp-tutorial/function-overload-differentiation/)
 
 - Two overloads are different if they differ in:
   - **number of parameters**
@@ -60,6 +62,7 @@ using Age = int;
 - References/pointers can produce different overloads when their types truly differ.
 
 ## 11.3 Function overload resolution and ambiguous matches
+[Function overload resolution and ambiguous matches](https://www.learncpp.com/cpp-tutorial/function-overload-resolution-and-ambiguous-matches/)
 
 - When you call an overloaded function, the compiler performs **overload resolution**.
 - Roughly, it prefers:
@@ -99,7 +102,8 @@ void log(int);
 void log(bool) = delete; // reject accidental bool conversions
 ```
 
-## 11.4 Default arguments and function overloading
+## 11.5 Default arguments
+[Default arguments](https://www.learncpp.com/cpp-tutorial/default-arguments/)
 
 - **Default arguments** let trailing parameters be omitted.
 - They work well with overloads, but can also create ambiguity.
@@ -162,6 +166,7 @@ int main()
 - Overloading on const-reference is common for read-only vs modifiable access.
 
 ## 11.6 Function templates
+[Function templates](https://www.learncpp.com/cpp-tutorial/function-templates/)
 
 - A **function template** is a pattern for generating functions.
 - `T` is a **template type parameter**.
@@ -203,6 +208,7 @@ int main()
 - `auto` return type deduction is often convenient in mixed-type templates.
 
 ## 11.7 Function template instantiation
+[Function template instantiation](https://www.learncpp.com/cpp-tutorial/function-template-instantiation/)
 
 - A template is not a real function by itself; it becomes one through **instantiation**.
 - Each unique template argument set generates a distinct function.
@@ -234,7 +240,8 @@ int main()
 - Template errors often appear at the **use site**, because that’s when instantiation happens.
 - If a template is never used, no concrete function may be generated.
 
-## 11.8 Abbreviated function templates (C++20)
+## 11.8 Function templates with multiple template types
+[Function templates with multiple template types](https://www.learncpp.com/cpp-tutorial/function-templates-with-multiple-template-types/)
 
 - C++20 allows template parameters to be written directly with `auto`.
 - This is shorthand for a function template.
@@ -276,6 +283,7 @@ auto square(T x)
 - more complex return-type logic
 
 ## 11.9 Non-type template parameters
+[Non-type template parameters](https://www.learncpp.com/cpp-tutorial/non-type-template-parameters/)
 
 - A **non-type template parameter (NTTP)** is a compile-time value, not a type.
 - Common uses:

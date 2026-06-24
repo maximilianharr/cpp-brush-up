@@ -3,6 +3,7 @@
 Concise refresher for the LearnCpp Chapter 12 lesson pages covering references, pointers, passing/returning by reference or address, and related type deduction. Quiz content omitted.
 
 ## 12.1 Introduction to compound types: References and pointers
+[Introduction to compound data types](https://www.learncpp.com/cpp-tutorial/introduction-to-compound-data-types/)
 
 - A **compound type** is built from another type.
 - In this chapter, the main compound types are:
@@ -27,6 +28,7 @@ ref = 10;          // changes value
 - Pointer = “an address you can follow”.
 
 ## 12.2 Value categories (lvalues and rvalues)
+[Value categories (lvalues and rvalues)](https://www.learncpp.com/cpp-tutorial/value-categories-lvalues-and-rvalues/)
 
 - An **lvalue** is an expression with identity: it has a persistent object behind it.
 - An **rvalue** is a temporary value or a value without stable identity.
@@ -51,6 +53,7 @@ const int& cr2{5}; // ok
 - Function parameter choice (`T`, `T&`, `const T&`, `T*`) affects what arguments are allowed.
 
 ## 12.3 Lvalue references
+[Lvalue references](https://www.learncpp.com/cpp-tutorial/lvalue-references/)
 
 - An **lvalue reference** uses `&` in a declaration: `T&`.
 - It must be initialized.
@@ -74,6 +77,7 @@ int b{30};
 - A reference can dangle if the referred object dies.
 
 ## 12.4 Lvalue references to const
+[Lvalue references to const](https://www.learncpp.com/cpp-tutorial/lvalue-references-to-const/)
 
 - `const T&` is a **reference to const**.
 - You can read through it, but not modify through it.
@@ -98,6 +102,7 @@ std::cout << b << '\n';
 - Accepting temporaries naturally
 
 ## 12.5 Pass by lvalue reference
+[Pass by lvalue reference](https://www.learncpp.com/cpp-tutorial/pass-by-lvalue-reference/)
 
 - Use `T&` when the function must modify the caller’s object.
 - The argument must be a modifiable lvalue.
@@ -128,6 +133,7 @@ int main()
 - the type is cheap to copy and mutation is unnecessary
 
 ## 12.6 Pass by const lvalue reference
+[Pass by const lvalue reference](https://www.learncpp.com/cpp-tutorial/pass-by-const-lvalue-reference/)
 
 - Use `const T&` for **read-only** parameters when copying would be unnecessary or expensive.
 - It accepts non-const lvalues, const lvalues, and rvalues.
@@ -156,6 +162,7 @@ int main()
 - `const T&` prevents modification through that parameter, not through other aliases.
 
 ## 12.7 Introduction to pointers
+[Introduction to pointers](https://www.learncpp.com/cpp-tutorial/introduction-to-pointers/)
 
 - A **pointer** stores the address of an object.
 - Pointer declaration syntax uses `*`: `T* ptr`.
@@ -185,6 +192,7 @@ std::cout << value << '\n'; // 99
   - better for optional targets and array traversal
 
 ## 12.8 Null pointers
+[Null pointers](https://www.learncpp.com/cpp-tutorial/null-pointers/)
 
 - A **null pointer** points to no object.
 - Use `nullptr` in modern C++.
@@ -221,6 +229,7 @@ int* badPtr{};
 ```
 
 ## 12.9 Pointers and const
+[Pointers and const](https://www.learncpp.com/cpp-tutorial/pointers-and-const/)
 
 - With pointers, `const` can apply to:
   - the pointed-to object
@@ -249,6 +258,7 @@ const int* const both{&x}; // neither modify pointee nor reseat
 - Use `T* const` mostly for local implementation details.
 
 ## 12.10 Pass by address
+[Pass by address](https://www.learncpp.com/cpp-tutorial/pass-by-address/)
 
 - **Pass by address** means passing a pointer argument.
 - Use it when:
@@ -279,6 +289,7 @@ void printLength(const std::string* s)
 - If null is meaningful, a pointer expresses that clearly.
 
 ## 12.11 Pass by address (part 2)
+[Pass by address (part 2)](https://www.learncpp.com/cpp-tutorial/pass-by-address-part-2/)
 
 - Pointer parameters are also useful for:
   - optional output parameters
@@ -310,6 +321,7 @@ int result{sum(data, data + 4)};
 - Prefer `std::span`, iterators, or containers in modern code when available.
 
 ## 12.12 Return by reference and return by address
+[Return by reference and return by address](https://www.learncpp.com/cpp-tutorial/return-by-reference-and-return-by-address/)
 
 - Returning by reference/address avoids a copy, but only works safely if the returned object outlives the function.
 - Safe sources:
@@ -362,6 +374,7 @@ const int* find(const int* begin, const int* end, int target)
 - It is dangerous when lifetime is unclear.
 
 ## 12.13 In and out parameters
+[In and out parameters](https://www.learncpp.com/cpp-tutorial/in-and-out-parameters/)
 
 - **In parameter**: input only.
 - **Out parameter**: function writes a result into it.
@@ -394,6 +407,7 @@ bool parseDigit(std::string_view text, int& outValue)
 - Avoid hiding surprising mutations in non-const reference parameters.
 
 ## 12.14 Type deduction with pointers, references, and const
+[Type deduction with pointers, references, and const](https://www.learncpp.com/cpp-tutorial/type-deduction-with-pointers-references-and-const/)
 
 - `auto` generally drops:
   - top-level `const`

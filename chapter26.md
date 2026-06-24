@@ -1,6 +1,7 @@
 # Chapter 26: Templates and Classes
 
 ## 26.1 Template classes
+[Template classes](https://www.learncpp.com/cpp-tutorial/template-classes/)
 
 - A class template is a class blueprint parameterized by one or more template parameters.
 - The compiler generates concrete classes when you instantiate the template with real arguments.
@@ -45,6 +46,7 @@ Quick refresher:
 - If you split declaration/definition into `.h` + `.cpp`, implicit instantiation usually fails unless you use explicit instantiation.
 
 ## 26.2 Template non-type parameters
+[Template non-type parameters](https://www.learncpp.com/cpp-tutorial/template-non-type-parameters/)
 
 - Non-type template parameters take compile-time values instead of types.
 - Good for sizes, flags, indices, capacities, and other constants.
@@ -85,6 +87,7 @@ Key points:
 - Great for array wrappers and compile-time configuration.
 
 ## 26.3 Function template specialization
+[Function template specialization](https://www.learncpp.com/cpp-tutorial/function-template-specialization/)
 
 - A function template specialization replaces the primary template for one exact type (or exact template argument set).
 - Use it when the generic implementation is wrong or inefficient for a specific type.
@@ -120,6 +123,7 @@ Refresher notes:
 - If overloading solves the problem cleanly, prefer overloading over specialization.
 
 ## 26.4 Class template specialization
+[Class template specialization](https://www.learncpp.com/cpp-tutorial/class-template-specialization/)
 
 - Class templates can be fully specialized for a specific type.
 - Unlike function specializations, a class specialization can have a completely different implementation.
@@ -166,6 +170,7 @@ Why this matters:
 - This is the classic “generic version + custom exact-type version” pattern.
 
 ## 26.5 Partial template specialization
+[Partial template specialization](https://www.learncpp.com/cpp-tutorial/partial-template-specialization/)
 
 - Partial specialization means “specialize some template arguments, but keep others generic”.
 - This is available for class templates (not function templates).
@@ -207,6 +212,7 @@ Pattern to remember:
 - The most specialized matching template wins.
 
 ## 26.6 Partial template specialization for pointers
+[Partial template specialization for pointers](https://www.learncpp.com/cpp-tutorial/partial-template-specialization-for-pointers/)
 
 - Pointers are a common specialization target because pointer semantics differ from plain values.
 - A primary template that works for values may need different behavior for `T*`.

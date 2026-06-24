@@ -1,6 +1,7 @@
 # Chapter 23: Object Relationships
 
 ## 23.1 Object relationships
+[Object relationships](https://www.learncpp.com/cpp-tutorial/object-relationships/)
 
 - Objects can relate to other objects in several common ways:
   - **Composition**: `whole` owns `part` objects.
@@ -41,6 +42,7 @@ void printTeacher(const Teacher& t) // dependency: temporary use
   - correct choice improves design clarity
 
 ## 23.2 Composition
+[Composition](https://www.learncpp.com/cpp-tutorial/composition/)
 
 - **Composition** is a **part-of** relationship where the whole object:
   - directly owns its parts
@@ -82,6 +84,7 @@ public:
 - Composition often gives the safest lifetime management because ownership is explicit.
 
 ## 23.3 Aggregation
+[Aggregation](https://www.learncpp.com/cpp-tutorial/aggregation/)
 
 - **Aggregation** is also a **has-a** relationship, but the whole does **not own** the parts.
 - The aggregated object can exist independently of the aggregator.
@@ -121,6 +124,7 @@ public:
 - If the whole must guarantee the part exists for its entire life, composition is often a better fit.
 
 ## 23.4 Association
+[Association](https://www.learncpp.com/cpp-tutorial/association/)
 
 - **Association** is a relationship where otherwise unrelated objects know about each other and interact.
 - Unlike aggregation, association is broader:
@@ -160,6 +164,7 @@ private:
 - Bidirectional associations increase coupling and make invariants harder to maintain.
 
 ## 23.5 Dependencies
+[Dependencies](https://www.learncpp.com/cpp-tutorial/dependencies/)
 
 - A **dependency** means one object/function uses another object **temporarily**.
 - This is typically the weakest relationship.
@@ -192,6 +197,7 @@ public:
 - This keeps classes less coupled and easier to test, replace, and reuse.
 
 ## 23.6 Container classes
+[Container classes](https://www.learncpp.com/cpp-tutorial/container-classes/)
 
 - A **container class** stores and organizes multiple objects.
 - Standard examples:
@@ -225,6 +231,7 @@ std::vector<int*> ptrs{&a, &b};   // does not own a or b
 - Prefer standard containers unless you specifically need custom behavior.
 
 ## 23.7 std::initializer_list
+[std::initializer_list](https://www.learncpp.com/cpp-tutorial/stdinitializer_list/)
 
 - `std::initializer_list<T>` lets objects/functions accept **brace-initialized lists**.
 - It is commonly used to make container-like types convenient to construct.

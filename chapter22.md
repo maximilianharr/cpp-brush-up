@@ -1,6 +1,7 @@
 # Chapter 22: Move Semantics and Smart Pointers
 
 ## 22.1 Introduction to smart pointers and move semantics
+[Introduction to smart pointers and move semantics](https://www.learncpp.com/cpp-tutorial/introduction-to-smart-pointers-move-semantics/)
 - Raw owning pointers are error-prone: easy to leak, double-delete, or forget ownership rules.
 - Smart pointers wrap raw pointers in classes that manage lifetime automatically.
 - Move semantics lets resources be transferred instead of copied.
@@ -49,6 +50,7 @@ public:
 - With move semantics, a temporary `Buffer` can transfer its pointer instead.
 
 ## 22.2 R-value references
+[R-value references](https://www.learncpp.com/cpp-tutorial/rvalue-references/)
 - An **lvalue** has identity/persistence; an **rvalue** is typically a temporary.
 - `T&` binds to non-const lvalues.
 - `const T&` can bind to lvalues and rvalues.
@@ -88,6 +90,7 @@ process(std::string{"tmp"});   // rvalue overload
 - Perfect forwarding is a later, related use case, but Chapter 22 focuses on moving.
 
 ## 22.3 Move constructors and move assignment
+[Move constructors and move assignment](https://www.learncpp.com/cpp-tutorial/move-constructors-and-move-assignment/)
 - A **move constructor** initializes an object by taking resources from an rvalue.
 - A **move assignment operator** replaces an existing object's resources by taking from an rvalue.
 - Typical move steps:
@@ -145,6 +148,7 @@ Buffer makeBuffer() {
 - In modern C++, copy elision often removes copies/moves entirely, but move support still matters.
 
 ## 22.4 std::move
+[std::move](https://www.learncpp.com/cpp-tutorial/stdmove/)
 - `std::move` does **not** move by itself.
 - It casts its argument to an rvalue expression so move-enabled operations can be selected.
 - After moving from an object, only rely on it being valid for destruction/assignment/reset.
@@ -185,6 +189,7 @@ std::unique_ptr<int> p2 = std::move(p1); // ownership transferred
 - Treat `std::move` as saying: “it is okay to pilfer this object now”.
 
 ## 22.5 std::unique_ptr
+[std::unique_ptr](https://www.learncpp.com/cpp-tutorial/stdunique_ptr/)
 - `std::unique_ptr<T>` represents exclusive ownership of a dynamically allocated object.
 - It deletes its owned object automatically when the `unique_ptr` dies.
 - Cannot be copied; can be moved.
@@ -230,6 +235,7 @@ void take(std::unique_ptr<int> p)       { /* owns now */ }
 - Use `unique_ptr` unless you truly need shared ownership.
 
 ## 22.6 std::shared_ptr
+[std::shared_ptr](https://www.learncpp.com/cpp-tutorial/stdshared_ptr/)
 - `std::shared_ptr<T>` supports shared ownership.
 - Internally it uses a **reference count** in a control block.
 - The managed object is deleted when the last owning `shared_ptr` goes away.
@@ -275,6 +281,7 @@ ricky->partner = lucy; // cycle
 - Use `shared_ptr` for true shared lifetime, not just convenient access.
 
 ## 22.7 std::weak_ptr
+[Circular dependency issues with std::shared_ptr, and std::weak_ptr](https://www.learncpp.com/cpp-tutorial/circular-dependency-issues-with-stdshared_ptr-and-stdweak_ptr/)
 - `std::weak_ptr<T>` observes an object managed by `shared_ptr` without owning it.
 - It does **not** contribute to the reference count.
 - Primary use: break `shared_ptr` cycles.

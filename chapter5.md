@@ -1,6 +1,7 @@
 # Chapter 5: Constants and Strings
 
 ## 5.1 Constant variables (named constants)
+[Constant variables (named constants)](https://www.learncpp.com/cpp-tutorial/constant-variables-named-constants/)
 - A **constant** is a value that cannot change after initialization.
 - Prefer **named constants** over repeating raw values.
 - Use `const` for values that should not be modified after creation.
@@ -28,6 +29,7 @@ constexpr double pi { 3.14159265358979323846 };
 ```
 
 ## 5.2 Literals
+[Literals](https://www.learncpp.com/cpp-tutorial/literals/)
 - A **literal** is a fixed value written directly in code.
 - Examples: `42`, `3.14`, `'a'`, `true`, `"hello"`.
 - Literals have types too:
@@ -56,6 +58,7 @@ auto bits { 0b1010'0101 };
 ```
 
 ## 5.3 Numeral systems (decimal, binary, hexadecimal, and octal)
+[Numeral systems (decimal, binary, hexadecimal, and octal)](https://www.learncpp.com/cpp-tutorial/numeral-systems-decimal-binary-hexadecimal-and-octal/)
 - C++ supports multiple integer literal bases:
   - decimal: `42`
   - binary: `0b101010`
@@ -88,6 +91,7 @@ int b { 010 }; // eight
 ```
 
 ## 5.4 The as-if rule and compile-time optimization
+[The as-if rule and compile-time optimization](https://www.learncpp.com/cpp-tutorial/the-as-if-rule-and-compile-time-optimization/)
 - The compiler may transform code **however it wants** as long as the program's
   **observable behavior** stays the same.
 - This is the **as-if rule**.
@@ -114,6 +118,7 @@ constexpr int area { width * height }; // computed at compile time
 - Optimization is a compiler choice; correctness must not rely on it.
 
 ## 5.5 Constant expressions
+[Constant expressions](https://www.learncpp.com/cpp-tutorial/constant-expressions/)
 - A **constant expression** is an expression that can be evaluated at compile time.
 - Not all constants are compile-time constants.
 - Key distinction:
@@ -155,6 +160,7 @@ constexpr int c { cube(3) };   // compile time only
 ```
 
 ## 5.6 Constexpr variables
+[Constexpr variables](https://www.learncpp.com/cpp-tutorial/constexpr-variables/)
 - `constexpr` declares a variable that must be initialized with a constant expression.
 - If initialization is not compile-time evaluable, compilation fails.
 - Use `constexpr` when a value is conceptually constant **and** should be compile-time known.
@@ -191,6 +197,7 @@ constexpr int bigger { max(5, 8) };
   - `const` value -> maybe compile-time, maybe runtime
 
 ## 5.7 Introduction to std::string
+[Introduction to std::string](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/)
 - `std::string` is the standard owning string type.
 - Include `<string>`.
 - It manages memory for you.
@@ -231,6 +238,7 @@ std::cout << name[0] << '\n';
 ```
 
 ## 5.8 Introduction to std::string_view
+[Introduction to std::string_view](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view/)
 - `std::string_view` is a **non-owning read-only view** of a string.
 - Include `<string_view>`.
 - It does not allocate or copy string data.
@@ -263,6 +271,7 @@ std::string_view sv { "hello" }; // view of string literal
   - you do not need to store/modify/own it
 
 ## 5.9 std::string_view (part 2)
+[std::string_view (part 2)](https://www.learncpp.com/cpp-tutorial/stdstring_view-part-2/)
 - `std::string_view` is fast, but lifetime matters.
 - A view becomes dangling if the referenced string dies or is modified in an invalidating way.
 
@@ -297,6 +306,7 @@ std::string_view view { owner };
 ```
 
 ## 5.x Chapter 5 summary and quiz
+[Chapter 5 summary and quiz](https://www.learncpp.com/cpp-tutorial/chapter-5-summary-and-quiz/)
 - Summary only below; quiz content intentionally omitted.
 - Use **`const`** for values that should not change after initialization.
 - Use **`constexpr`** for values that should be compile-time constants.

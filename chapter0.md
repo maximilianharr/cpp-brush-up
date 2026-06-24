@@ -1,6 +1,7 @@
 # Chapter 0: Introduction / Getting Started
 
 ## 0.1 Introduction to these tutorials
+[Introduction to these tutorials](https://www.learncpp.com/cpp-tutorial/introduction-to-these-tutorials/)
 - LearnCpp is structured as a step-by-step path from absolute beginner topics to modern C++ practice.
 - The goal is not just syntax memorization, but understanding how C++ programs are built, run, and debugged.
 - Expect to learn by reading, typing code, compiling, breaking things, and fixing them.
@@ -9,6 +10,7 @@
 - Modern C++ style matters: prefer current language features and standard-library solutions over older C-style habits.
 
 ## 0.2 Introduction to programs and programming languages
+[Introduction to programs and programming languages](https://www.learncpp.com/cpp-tutorial/introduction-to-programming-languages/)
 - A **program** is a set of instructions that tells a computer what to do.
 - Source code is written in a human-readable programming language; computers ultimately run machine code.
 - A programming language gives you a vocabulary and rules for expressing logic precisely.
@@ -23,6 +25,7 @@
   - **logic errors**: program runs, but gives the wrong result.
 
 ## 0.3 Introduction to C/C++
+[Introduction to C/C++](https://www.learncpp.com/cpp-tutorial/introduction-to-cplusplus/)
 - C++ grew out of C, but modern C++ is its own language with much stronger abstraction and library support.
 - C is smaller and closer to the hardware model; C++ adds features for safer, larger, and more expressive programs.
 - C++ supports multiple styles:
@@ -35,6 +38,7 @@
 - Portability is a major strength when you stay within the language standard and standard library.
 
 ## 0.4 Introduction to C++ development
+[Introduction to C++ development](https://www.learncpp.com/cpp-tutorial/introduction-to-cpp-development/)
 - A typical C++ workflow is:
   1. write source code,
   2. compile it,
@@ -53,6 +57,7 @@
 - Real programs are often split across multiple files and built as a project rather than one giant source file.
 
 ## 0.5 Introduction to the compiler, linker, and libraries
+[Introduction to the compiler, linker, and libraries](https://www.learncpp.com/cpp-tutorial/introduction-to-the-compiler-linker-and-libraries/)
 - The **compiler** translates each source file into an object file and reports compile-time errors.
 - The **linker** combines object files and required libraries into the final executable.
 - A **library** is prewritten code you can reuse instead of writing everything from scratch.
@@ -66,6 +71,7 @@
   - **runtime problem**: executable built, but behavior is wrong.
 
 ## 0.6 Installing an Integrated Development Environment (IDE)
+[Installing an Integrated Development Environment (IDE)](https://www.learncpp.com/cpp-tutorial/installing-an-integrated-development-environment-ide/)
 - An **IDE** bundles editor, compiler integration, build commands, and debugger into one workflow.
 - Use a mainstream toolchain for your platform:
   - **Windows**: Visual Studio Community,
@@ -76,6 +82,7 @@
 - If something fails early, it is usually a toolchain/setup issue rather than a C++ language issue.
 
 ## 0.7 Compiling your first program
+[Compiling your first program](https://www.learncpp.com/cpp-tutorial/compiling-your-first-program/)
 - Start with a minimal console program and make sure the full build/run loop works.
 - Typical loop:
   1. create project,
@@ -101,6 +108,7 @@ int main()
 - Getting this first program working proves your editor, compiler, linker, and run configuration are all basically usable.
 
 ## 0.8 A few common C++ problems
+[A few common C++ problems](https://www.learncpp.com/cpp-tutorial/a-few-common-cpp-problems/)
 - **Console window opens and closes immediately**
   - Prefer running from a terminal or using **Start Without Debugging** in your IDE.
   - For temporary local testing, you can pause at the end of `main()`.
@@ -129,6 +137,7 @@ int main()
 - Avoid `system("pause")`: it is non-portable and not good practice.
 
 ## 0.9 Configuring your compiler: Build configurations
+[Configuring your compiler: Build configurations](https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-build-configurations/)
 - The two common build configurations are **Debug** and **Release**.
 - **Debug**:
   - little or no optimization,
@@ -144,6 +153,7 @@ int main()
 - Do not assume “works in Debug” means “works everywhere”.
 
 ## 0.10 Configuring your compiler: Compiler extensions
+[Configuring your compiler: Compiler extensions](https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-compiler-extensions/)
 - **Compiler extensions** are non-standard features a compiler accepts beyond standard C++.
 - They can be convenient, but they reduce portability and can hide bad assumptions.
 - If code depends on one compiler’s extensions, it may fail on another compiler or platform.
@@ -153,6 +163,7 @@ int main()
 - Use extensions only intentionally, with a clear portability tradeoff.
 
 ## 0.11 Configuring your compiler: Warning and error levels
+[Configuring your compiler: Warning and error levels](https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-warning-and-error-levels/)
 - Turn warning levels **up**, not down.
 - Warnings catch suspicious code that is legal enough to compile but still likely wrong.
 - Good defaults:
@@ -165,6 +176,7 @@ int main()
 - Treat compiler diagnostics as feedback, not noise.
 
 ## 0.12 Configuring your compiler: Choosing a language standard
+[Configuring your compiler: Choosing a language standard](https://www.learncpp.com/cpp-tutorial/configuring-your-compiler-choosing-a-language-standard/)
 - C++ evolves through named standards such as C++11, C++14, C++17, C++20, and C++23.
 - Do not rely on your compiler’s default standard; set the project standard explicitly.
 - In practice, choose the newest stable standard your compiler and project support.
@@ -177,6 +189,7 @@ int main()
   - portability across machines and toolchains.
 
 ## 0.13 What language standard is my compiler using?
+[What language standard is my compiler using?](https://www.learncpp.com/cpp-tutorial/what-language-standard-is-my-compiler-using/)
 - The active standard can be checked in project settings or by inspecting `__cplusplus`.
 - Handy probe:
 

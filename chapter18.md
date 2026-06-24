@@ -3,6 +3,7 @@
 Current LearnCpp Chapter 18 pages surfaced via web search are 18.1–18.4 below. This refresher skips quiz material and focuses on the practical STL takeaways.
 
 ## 18.1 Sorting an array using selection sort
+[Sorting an array using selection sort](https://www.learncpp.com/cpp-tutorial/sorting-an-array-using-selection-sort/)
 
 - **Selection sort** repeatedly finds the smallest remaining element and swaps it into the next sorted position.
 - It is useful as a teaching algorithm because the logic is simple and explicit.
@@ -48,6 +49,7 @@ for (int value : data)
 **Refresher takeaway:** understand selection sort to understand algorithm structure; use STL algorithms when available.
 
 ## 18.2 Introduction to iterators
+[Introduction to iterators](https://www.learncpp.com/cpp-tutorial/introduction-to-iterators/)
 
 - An **iterator** is an object that points at elements in a container and lets generic code traverse that container.
 - Think of it as a generalized pointer:
@@ -103,6 +105,7 @@ Examples:
 - Prefer iterators when you need position-aware traversal; prefer range-for when you just want each element.
 
 ## 18.3 Introduction to standard library algorithms
+[Introduction to standard library algorithms](https://www.learncpp.com/cpp-tutorial/introduction-to-standard-library-algorithms/)
 
 - `<algorithm>` gives you tested, expressive building blocks for common operations.
 - Most algorithms work on an iterator pair: **`[first, last)`**.
@@ -183,6 +186,7 @@ auto maxIt{ std::max_element(nums.begin(), nums.end()) };
 **Refresher takeaway:** if you are about to write a loop, first ask whether an algorithm already expresses the intent better.
 
 ## 18.4 Timing your code
+[Timing your code](https://www.learncpp.com/cpp-tutorial/timing-your-code/)
 
 - Use timing when comparing implementations, validating optimizations, or finding obviously slow paths.
 - Prefer `<chrono>` over ad hoc timers.

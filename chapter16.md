@@ -3,6 +3,7 @@
 Concise refresher based on the current LearnCpp Chapter 16 lesson list (quizzes omitted).
 
 ## 16.1 Introduction to containers and arrays
+[Introduction to containers and arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/)
 - A **container** stores and manages a collection of objects.
 - An **array** stores elements of one type, usually in contiguous memory.
 - Prefer standard containers over raw arrays in modern C++.
@@ -23,6 +24,7 @@ std::vector<int> dynamic{1, 2, 3};   // resizable
 - Size changes at runtime -> `std::vector`
 
 ## 16.2 Introduction to std::vector and list constructors
+[Introduction to std::vector and list constructors](https://www.learncpp.com/cpp-tutorial/introduction-to-stdvector-and-list-constructors/)
 - Include `<vector>`.
 - `std::vector<T>` tracks its own length.
 - Parentheses and braces can mean different things.
@@ -61,6 +63,7 @@ int x = matrix[1][2]; // 6
 ```
 
 ## 16.3 std::vector and the unsigned length and subscript problem
+[std::vector and the unsigned length and subscript problem](https://www.learncpp.com/cpp-tutorial/stdvector-and-the-unsigned-length-and-subscript-problem/)
 - `vector::size()` returns an unsigned type (`size_type`, usually `std::size_t`).
 - Subscripting also expects an unsigned index.
 - Mixing signed ints with unsigned sizes can cause warnings or bugs.
@@ -86,6 +89,7 @@ for (std::size_t i{0}; i < v.size(); ++i)
 ```
 
 ## 16.4 Passing std::vector
+[Passing std::vector](https://www.learncpp.com/cpp-tutorial/passing-stdvector/)
 - Pass by **const reference** to read without copying.
 - Pass by **non-const reference** to modify in-place.
 - Pass by **value** only when you intentionally want a copy.
@@ -116,6 +120,7 @@ void print(const std::vector<T>& v)
 ```
 
 ## 16.5 Returning std::vector and the elision optimization
+[Returning std::vector, and an introduction to move semantics](https://www.learncpp.com/cpp-tutorial/returning-stdvector-and-an-introduction-to-move-semantics/)
 - Returning a vector by value is normal and usually efficient.
 - Compilers often apply **copy elision / NRVO**.
 - If elision does not happen, move semantics usually transfer ownership of the buffer cheaply.
@@ -140,7 +145,8 @@ Bad:
 // std::vector<int>& makeBad(); // never return ref to local data
 ```
 
-## 16.6 Introduction to std::array
+## 17.1 Introduction to std::array
+[Introduction to std::array](https://www.learncpp.com/cpp-tutorial/introduction-to-stdarray/)
 - `std::array<T, N>` is a fixed-size container.
 - Size is part of the type.
 - Unlike raw arrays, it works well with copy, assignment, `.size()`, and range-for.
@@ -159,6 +165,7 @@ Compared to `std::vector`:
 - `std::vector`: resizable
 
 ## 16.7 Arrays, loops, and sign challenge solutions
+[Arrays, loops, and sign challenge solutions](https://www.learncpp.com/cpp-tutorial/arrays-loops-and-sign-challenge-solutions/)
 - Loops over arrays/vectors often run into signed/unsigned mismatches.
 - Forward loops are straightforward; reverse loops need extra care.
 - Unsigned reverse loops can underflow if written poorly.
@@ -210,6 +217,7 @@ v.resize(5); // {1,2,0,0,0}
 ```
 
 ## 16.9 Array indexing and length using enumerators
+[Array indexing and length using enumerators](https://www.learncpp.com/cpp-tutorial/array-indexing-and-length-using-enumerators/)
 - Enumerators make named indices clearer than magic numbers.
 - A final enumerator can represent the element count.
 - This works especially well when entries have stable named positions.
@@ -234,6 +242,7 @@ Benefits:
 - fewer hard-coded numbers
 
 ## 16.10 Using range-based for loops with containers
+[Range-based for loops (for-each)](https://www.learncpp.com/cpp-tutorial/range-based-for-loops-for-each/)
 - Use range-for when you care about elements more than indices.
 - By value -> copies each element.
 - By reference -> can modify elements.
@@ -257,7 +266,9 @@ Use indices instead when you need:
 - parallel access to multiple containers
 - neighbor lookups (`v[i - 1]`, `v[i + 1]`)
 
-## 16.11 std::vector and stack behavior
+## 16.11 std::vector resizing/capacity and stack behavior
+[std::vector resizing and capacity](https://www.learncpp.com/cpp-tutorial/stdvector-resizing-and-capacity/)
+[std::vector and stack behavior](https://www.learncpp.com/cpp-tutorial/stdvector-and-stack-behavior/)
 - `std::vector` is efficient at the **back**.
 - `push_back()` / `pop_back()` make it a natural stack-like container.
 - Middle/front insertion and erasure are comparatively expensive.
@@ -297,6 +308,7 @@ v.resize(5);   // size 5, now {1,2,3,0,0}
 Use `reserve()` when many `push_back()` calls are coming.
 
 ## 16.12 std::vector<bool>
+[std::vector<bool>](https://www.learncpp.com/cpp-tutorial/stdvector-bool/)
 - `std::vector<bool>` is a special packed representation, not a normal `vector<T>`.
 - It may store bits instead of separate `bool` objects.
 - Element access can return proxy objects rather than real `bool&`.

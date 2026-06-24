@@ -1,6 +1,7 @@
 # Chapter 1: C++ Basics
 
 ## 1.1 Statements and the structure of a program
+[Statements and the structure of a program](https://www.learncpp.com/cpp-tutorial/statements-and-the-structure-of-a-program/)
 - A C++ program is built from **statements**: instructions that tell the program what to do.
 - Statements usually end with a semicolon `;`.
 - Execution starts in `main()`.
@@ -21,6 +22,7 @@ int main()
 ```
 
 ## 1.2 Comments
+[Comments](https://www.learncpp.com/cpp-tutorial/comments/)
 - Comments are for humans; the compiler ignores them.
 - Use `//` for single-line comments.
 - Use `/* ... */` for block comments.
@@ -43,6 +45,7 @@ int main()
 ```
 
 ## 1.3 Introduction to objects and variables
+[Introduction to objects and variables](https://www.learncpp.com/cpp-tutorial/introduction-to-objects-and-variables/)
 - An **object** is a region of memory that can hold a value.
 - A **variable** is the name used to access that object.
 - Every variable has a **type** (`int`, `double`, `char`, etc.).
@@ -63,6 +66,7 @@ int main()
 ```
 
 ## 1.4 Variable assignment and initialization
+[Variable assignment and initialization](https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/)
 - **Initialization** gives a variable its first value when it is created.
 - **Assignment** gives a value to an existing variable later.
 - Prefer initializing variables immediately.
@@ -86,6 +90,7 @@ int main()
 ```
 
 ## 1.5 Introduction to iostream: cout, cin, and endl
+[Introduction to iostream: cout, cin, and endl](https://www.learncpp.com/cpp-tutorial/introduction-to-iostream-cout-cin-and-endl/)
 - Include `<iostream>` to use standard console I/O.
 - `std::cout` writes output.
 - `<<` inserts data into the output stream.
@@ -110,6 +115,7 @@ int main()
 ```
 
 ## 1.6 Uninitialized variables and undefined behavior
+[Uninitialized variables and undefined behavior](https://www.learncpp.com/cpp-tutorial/uninitialized-variables-and-undefined-behavior/)
 - A variable that was declared but not given a value is **uninitialized**.
 - Reading an uninitialized local variable causes **undefined behavior**.
 - Undefined behavior means anything can happen:
@@ -135,6 +141,7 @@ int main()
 ```
 
 ## 1.7 Keywords and naming identifiers
+[Keywords and naming identifiers](https://www.learncpp.com/cpp-tutorial/keywords-and-naming-identifiers/)
 - **Keywords** are reserved words in C++ (`int`, `return`, `if`, etc.).
 - You cannot use keywords as names.
 - **Identifiers** are names for variables, functions, types, and more.
@@ -160,6 +167,7 @@ int main()
 ```
 
 ## 1.8 Whitespace and basic formatting
+[Whitespace and basic formatting](https://www.learncpp.com/cpp-tutorial/whitespace-and-basic-formatting/)
 - C++ mostly ignores extra spaces, tabs, and line breaks.
 - Whitespace exists mainly to make code readable.
 - Good formatting reduces mistakes and speeds up review.
@@ -185,6 +193,7 @@ int main(){int x{2};int y{3};int sum{x+y};return 0;}
 ```
 
 ## 1.9 Introduction to literals and operators
+[Introduction to literals and operators](https://www.learncpp.com/cpp-tutorial/introduction-to-literals-and-operators/)
 - A **literal** is a fixed value written directly in code.
 - Common literal kinds:
   - integer: `42`
@@ -215,6 +224,7 @@ int main()
 ```
 
 ## 1.10 Introduction to expressions
+[Introduction to expressions](https://www.learncpp.com/cpp-tutorial/introduction-to-expressions/)
 - An **expression** is a combination of literals, variables, and operators that evaluates to a value.
 - A single literal like `5` is an expression.
 - A variable like `x` is an expression.
@@ -237,6 +247,7 @@ int main()
 ```
 
 ## 1.11 Developing your first program
+[Developing your first program](https://www.learncpp.com/cpp-tutorial/developing-your-first-program/)
 - Typical beginner workflow:
   1. write a small program
   2. compile it

@@ -1,6 +1,7 @@
 # Chapter 3: Debugging C++ Programs
 
 ## 3.1 Syntax and semantic errors
+[Syntax and semantic errors](https://www.learncpp.com/cpp-tutorial/syntax-and-semantic-errors/)
 
 - **Syntax errors**: code breaks C++ grammar rules; compiler stops.
 - **Semantic errors**: code is valid C++, but meaning/behavior is wrong.
@@ -47,6 +48,7 @@ std::cout << x / y << '\n'; // runtime problem: divide by zero
 ---
 
 ## 3.2 The debugging process
+[The debugging process](https://www.learncpp.com/cpp-tutorial/the-debugging-process/)
 
 Debugging is usually:
 1. **Find** the root cause
@@ -85,6 +87,7 @@ for (int i{1}; i < 3; ++i) // bug: should be <= 3
 ---
 
 ## 3.3 A strategy for debugging
+[A strategy for debugging](https://www.learncpp.com/cpp-tutorial/a-strategy-for-debugging/)
 
 Most debugging time is spent **finding** the bad code, not fixing it.
 
@@ -123,6 +126,7 @@ Ask:
 ---
 
 ## 3.4 Basic debugging tactics
+[Basic debugging tactics](https://www.learncpp.com/cpp-tutorial/basic-debugging-tactics/)
 
 ### 1) Comment out code
 - Temporarily disable suspicious lines/blocks.
@@ -161,6 +165,7 @@ std::cerr << "score=" << score << ", bonus=" << bonus << '\n';
 ---
 
 ## 3.5 More debugging tactics
+[More debugging tactics](https://www.learncpp.com/cpp-tutorial/more-debugging-tactics/)
 
 ### Toggleable debug output
 Use conditional compilation so debug prints are easy to enable/disable.
@@ -199,6 +204,7 @@ DBG("x=" << x << ", y=" << y);
 ---
 
 ## 3.6 Using an integrated debugger: Stepping
+[Using an integrated debugger: Stepping](https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-stepping/)
 
 Stepping lets you run code **line by line** without editing source to add prints.
 
@@ -233,6 +239,7 @@ std::cout << z << '\n'; // step over: likely enough here
 ---
 
 ## 3.7 Using an integrated debugger: Running and breakpoints
+[Using an integrated debugger: Running and breakpoints](https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-running-and-breakpoints/)
 
 Breakpoints pause execution at the place you care about.
 
@@ -269,6 +276,7 @@ if (count > maxCount)   // place breakpoint here
 ---
 
 ## 3.8 Using an integrated debugger: Watching variables
+[Using an integrated debugger: Watching variables](https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-watching-variables/)
 
 Watching variables lets you inspect values without adding `cout`/`cerr`.
 
@@ -307,6 +315,7 @@ Useful watches:
 ---
 
 ## 3.9 Using an integrated debugger: The call stack
+[Using an integrated debugger: The call stack](https://www.learncpp.com/cpp-tutorial/using-an-integrated-debugger-the-call-stack/)
 
 The **call stack** shows the chain of active function calls.
 
@@ -352,6 +361,7 @@ If paused inside `parseConfig()`, the call stack typically shows:
 ---
 
 ## 3.10 Finding issues before they become problems
+[Finding issues before they become problems](https://www.learncpp.com/cpp-tutorial/finding-issues-before-they-become-problems/)
 
 The cheapest bug is the one you prevent.
 

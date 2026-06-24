@@ -3,6 +3,7 @@
 Concise refresher for the current LearnCpp Chapter 10 lesson pages (10.1–10.8). Quiz pages omitted.
 
 ## 10.1 Implicit type conversion
+[Implicit type conversion](https://www.learncpp.com/cpp-tutorial/implicit-type-conversion/)
 
 - An **implicit conversion** happens automatically when C++ needs a value of a different type.
 - Common places: initialization, assignment, function arguments, return values, and expressions.
@@ -52,7 +53,8 @@ double g{f};      // float promoted to double
 
 **Why this matters:** many “small” types do not stay small once expressions are evaluated.
 
-## 10.3 Numeric promotion and conversion
+## 10.3 Numeric conversions
+[Numeric conversions](https://www.learncpp.com/cpp-tutorial/numeric-conversions/)
 
 - Arithmetic types can be changed to other arithmetic types automatically or explicitly.
 - **Promotion** usually preserves the value exactly.
@@ -77,7 +79,8 @@ int signedValue{static_cast<int>(u)}; // okay only if value fits
 
 **Mental model:** promotions are usually harmless; general numeric conversions need scrutiny.
 
-## 10.4 Usual arithmetic conversions
+## 10.5 Arithmetic conversions
+[Arithmetic conversions](https://www.learncpp.com/cpp-tutorial/arithmetic-conversions/)
 
 - When arithmetic operands have different types, C++ converts them to a **common type** first.
 - This process is called the **usual arithmetic conversions**.
@@ -104,7 +107,8 @@ bool less = (x < y); // x converts to unsigned, often surprising
 
 **Takeaway:** if mixed-type arithmetic matters, make the target type explicit instead of relying on implicit balancing.
 
-## 10.5 Narrowing conversions
+## 10.4 Narrowing conversions, list initialization, and constexpr initializers
+[Narrowing conversions, list initialization, and constexpr initializers](https://www.learncpp.com/cpp-tutorial/narrowing-conversions-list-initialization-and-constexpr-initializers/)
 
 - A **narrowing conversion** is a conversion that may lose information.
 - Common narrowing cases:
@@ -132,6 +136,7 @@ int big{1000};
 - use an explicit cast only when loss is intentional and understood
 
 ## 10.6 Explicit type conversion (casting) and static_cast
+[Explicit type conversion (casting) and static_cast](https://www.learncpp.com/cpp-tutorial/explicit-type-conversion-casting-and-static-cast/)
 
 - Use an **explicit cast** when you want a conversion to be visible and intentional.
 - For ordinary well-defined conversions, prefer **`static_cast`**.
@@ -157,6 +162,7 @@ int whole{static_cast<int>(pi)}; // explicit truncation
 **Use `static_cast` to say “yes, I really mean this conversion”.**
 
 ## 10.7 Typedefs and type aliases
+[Typedefs and type aliases](https://www.learncpp.com/cpp-tutorial/typedefs-and-type-aliases/)
 
 - A **type alias** gives an existing type another name.
 - Old syntax: `typedef`
@@ -184,7 +190,8 @@ Vec<double> values{1.0, 2.0, 3.0};
 **Good use:** make complex or semantic types easier to read.  
 **Bad use:** hiding simple built-in types for no real benefit.
 
-## 10.8 Type deduction (auto)
+## 10.8 Type deduction for objects using the auto keyword
+[Type deduction for objects using the auto keyword](https://www.learncpp.com/cpp-tutorial/type-deduction-for-objects-using-the-auto-keyword/)
 
 - `auto` tells the compiler to deduce the type from the initializer.
 - An initializer is required because deduction needs a source type.

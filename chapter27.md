@@ -1,6 +1,7 @@
 # Chapter 27: Exceptions
 
-## 27.1 Introduction to exceptions
+## 27.1 The need for exceptions
+[The need for exceptions](https://www.learncpp.com/cpp-tutorial/the-need-for-exceptions/)
 - Exceptions are for errors/failures that interrupt the normal flow of a program.
 - They separate:
   - normal result handling
@@ -46,6 +47,7 @@ double reciprocal(double x)
 - The tradeoff is hidden control flow; readers must know a call can throw.
 
 ## 27.2 Throwing exceptions
+[Basic exception handling](https://www.learncpp.com/cpp-tutorial/basic-exception-handling/)
 - Throw with `throw expression;`.
 - The expression creates/copies an exception object.
 - Throw by value, catch by reference.
@@ -89,6 +91,7 @@ void setUserName(std::string_view name)
 - If your API can fail in several distinct ways, choose exception types that let callers react differently.
 
 ## 27.3 Catching exceptions
+[Exceptions, functions, and stack unwinding](https://www.learncpp.com/cpp-tutorial/exceptions-functions-and-stack-unwinding/)
 - Handle exceptions with `try` / `catch`.
 - Put potentially-throwing code inside a `try` block.
 - Attach one or more `catch` handlers after it.
@@ -161,6 +164,7 @@ int main()
 - Keep `try` blocks narrow when practical; it makes intended recovery clearer.
 
 ## 27.4 Exception specifications (noexcept)
+[Exception specifications and noexcept](https://www.learncpp.com/cpp-tutorial/exception-specifications-and-noexcept/)
 - Old dynamic exception specifications (`throw(Type)`) are removed from modern C++ practice.
 - The important modern tool is `noexcept`.
 - `noexcept` means a function promises that no exception will escape it.
@@ -207,6 +211,7 @@ static_assert(noexcept(Buffer{std::declval<Buffer&&>()}));
   - leave it off if failure propagation is still needed
 
 ## 27.5 Exceptions, classes, and inheritance
+[Exceptions, classes, and inheritance](https://www.learncpp.com/cpp-tutorial/exceptions-classes-and-inheritance/)
 - Exception objects are just objects, so classes work naturally as exception types.
 - Inheritance lets you group related failures and catch them polymorphically.
 - The standard library base type is `std::exception`.
@@ -275,6 +280,7 @@ int main()
 - Prefer a broad `std::exception` catch near top-level program boundaries.
 
 ## 27.6 Exceptions and constructors/destructors
+[Function try blocks](https://www.learncpp.com/cpp-tutorial/function-try-blocks/)
 - Constructors can throw if they cannot establish a valid object.
 - If a constructor throws:
   - the object is considered not fully constructed
@@ -336,6 +342,7 @@ public:
 - This is the key mental model for constructor failures.
 
 ## 27.7 Exception handling and program performance
+[Exception dangers and downsides](https://www.learncpp.com/cpp-tutorial/exception-dangers-and-downsides/)
 - Exceptions improve separation of normal code from recovery code, but they are not free.
 - Downsides:
   - control flow becomes less explicit

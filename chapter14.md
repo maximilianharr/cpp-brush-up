@@ -3,6 +3,7 @@
 Concise refresher for the current LearnCpp Chapter 14 lessons. Quiz content omitted.
 
 ## 14.1 Introduction to object-oriented programming
+[Introduction to object-oriented programming](https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/)
 
 - **OOP** models a program as objects that combine **state** (data) and **behavior** (functions).
 - A **class** is a blueprint; an **object** is an instance of that class.
@@ -28,6 +29,7 @@ Vec2 velocity{ 3.0, 4.0 };
 **Refresher:** think “define a type with rules + operations”, not just “put everything in objects”.
 
 ## 14.2 Introduction to classes
+[Introduction to classes](https://www.learncpp.com/cpp-tutorial/introduction-to-classes/)
 
 - A class can contain:
   - **data members** (state)
@@ -52,6 +54,7 @@ Date today{};
 **Refresher:** prefer `class` when you want encapsulation; prefer `struct` for plain data aggregates.
 
 ## 14.3 Member functions
+[Member functions](https://www.learncpp.com/cpp-tutorial/member-functions/)
 
 - Member functions are functions defined as part of a class.
 - They can access the object’s private data directly.
@@ -78,6 +81,7 @@ void Counter::add(int amount)
 **Refresher:** member functions are the primary way objects expose behavior safely.
 
 ## 14.4 Const class objects and const member functions
+[Const class objects and const member functions](https://www.learncpp.com/cpp-tutorial/const-class-objects-and-const-member-functions/)
 
 - A `const` object can only call **const member functions**.
 - Add `const` after the function parameter list to promise not to modify object state.
@@ -102,6 +106,7 @@ int age{ p.getAge() };
 **Refresher:** if a member function conceptually reads only, make it `const`.
 
 ## 14.5 Public and private members and access specifiers
+[Public and private members and access specifiers](https://www.learncpp.com/cpp-tutorial/public-and-private-members-and-access-specifiers/)
 
 - Access specifiers control who can use class members:
   - `public`: part of the interface
@@ -125,6 +130,7 @@ public:
 **Refresher:** public interface small, private details flexible.
 
 ## 14.6 Access functions
+[Access functions](https://www.learncpp.com/cpp-tutorial/access-functions/)
 
 - **Accessors / getters** expose data in a controlled way.
 - **Mutators / setters** change data, often with validation.
@@ -151,6 +157,7 @@ public:
 **Refresher:** getters are cheap abstraction; setters are where validation usually lives.
 
 ## 14.7 Member functions returning references to data members
+[Member functions returning references to data members](https://www.learncpp.com/cpp-tutorial/member-functions-returning-references-to-data-members/)
 
 - Returning by reference avoids copies for expensive members.
 - Prefer returning **`const T&`** for read-only access.
@@ -176,6 +183,7 @@ Employee e{};
 **Refresher:** return by value for safety, by `const&` for efficiency, by non-const `&` only deliberately.
 
 ## 14.8 The benefits of data hiding (encapsulation)
+[The benefits of data hiding (encapsulation)](https://www.learncpp.com/cpp-tutorial/the-benefits-of-data-hiding-encapsulation/)
 
 - **Encapsulation** = hide representation, expose a stable interface.
 - Benefits:
@@ -222,6 +230,7 @@ public:
 **Refresher:** callers can use the account safely without knowing how the balance is stored.
 
 ## 14.9 Introduction to constructors
+[Introduction to constructors](https://www.learncpp.com/cpp-tutorial/introduction-to-constructors/)
 
 - A constructor initializes an object when it is created.
 - Same name as the class, no return type.
@@ -248,6 +257,7 @@ Fraction half{ 1, 2 };
 **Refresher:** if an object needs setup, put that setup in a constructor.
 
 ## 14.10 Constructor member initializer lists
+[Constructor member initializer lists](https://www.learncpp.com/cpp-tutorial/constructor-member-initializer-lists/)
 
 - The member initializer list comes after `:` and before the constructor body.
 - Members are initialized **before** the body executes.
@@ -277,6 +287,7 @@ public:
 **Refresher:** initialize first, assign later only when you must.
 
 ## 14.11 Default constructors and default arguments
+[Default constructors and default arguments](https://www.learncpp.com/cpp-tutorial/default-constructors-and-default-arguments/)
 
 - A **default constructor** can be called with no arguments.
 - `T obj{};` uses the default constructor if one exists.
@@ -304,6 +315,7 @@ Widget b{ 10, false };
 **Refresher:** default arguments are a simple way to avoid repetitive overloads.
 
 ## 14.12 Delegating constructors
+[Delegating constructors](https://www.learncpp.com/cpp-tutorial/delegating-constructors/)
 
 - A delegating constructor calls another constructor in the same class.
 - Use this to centralize common initialization logic.
@@ -330,6 +342,7 @@ public:
 **Refresher:** pick one “real” constructor and delegate to it from the convenience ones.
 
 ## 14.13 Temporary class objects
+[Temporary class objects](https://www.learncpp.com/cpp-tutorial/temporary-class-objects/)
 
 - A temporary class object is an unnamed object created in an expression.
 - Common uses:
@@ -359,6 +372,7 @@ const std::string& s{ std::string{ "hello" } }; // lifetime extended
 **Refresher:** temporary object lifetime is short; don’t keep references/pointers into it unless lifetime extension applies.
 
 ## 14.14 Introduction to the copy constructor
+[Introduction to the copy constructor](https://www.learncpp.com/cpp-tutorial/introduction-to-the-copy-constructor/)
 
 - A copy constructor initializes a new object from another object of the same type.
 - Typical form: `Class(const Class& other)`.
@@ -388,6 +402,7 @@ IntPair b{ a }; // copy constructor
 **Refresher:** for value-like classes, compiler-generated copy is often enough; prefer Rule of Zero when possible.
 
 ## 14.15 Class initialization and copy elision
+[Class initialization and copy elision](https://www.learncpp.com/cpp-tutorial/class-initialization-and-copy-elision/)
 
 - Class objects can be:
   - default-initialized
@@ -419,6 +434,7 @@ Widget c{ makeWidget() };
 **Refresher:** think in terms of object construction semantics; copies may never materialize.
 
 ## 14.16 Converting constructors and the explicit keyword
+[Converting constructors and the explicit keyword](https://www.learncpp.com/cpp-tutorial/converting-constructors-and-the-explicit-keyword/)
 
 - A constructor that can be called with one argument can define an implicit conversion.
 - This can be convenient, but accidental conversions are a common source of bugs.
@@ -444,6 +460,7 @@ Distance a{ 3.5 };   // ok
 **Refresher:** implicit conversions should feel obviously correct; otherwise use `explicit`.
 
 ## 14.17 Constexpr aggregates and classes
+[Constexpr aggregates and classes](https://www.learncpp.com/cpp-tutorial/constexpr-aggregates-and-classes/)
 
 - `constexpr` enables objects and functions to participate in compile-time evaluation.
 - A small class can be usable at compile time if its constructor/operations are `constexpr`.

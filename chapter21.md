@@ -1,6 +1,7 @@
 # Chapter 21: Operator Overloading
 
 ## 21.1 Introduction to operator overloading
+[Introduction to operator overloading](https://www.learncpp.com/cpp-tutorial/introduction-to-operator-overloading/)
 - Operator overloading lets user-defined types act more like built-in types.
 - You define how an operator behaves when at least one operand is a class or enum type.
 - Good overloads make code natural; bad overloads make code surprising.
@@ -40,6 +41,7 @@ public:
 - Prefer clarity over cleverness.
 
 ## 21.2 Overloading arithmetic operators using friend functions
+[Overloading the arithmetic operators using friend functions](https://www.learncpp.com/cpp-tutorial/overloading-the-arithmetic-operators-using-friend-functions/)
 - Friend operator overloads are non-members with access to private data.
 - Useful when both operands should be treated symmetrically.
 - Common for binary arithmetic like `+`, `-`, `*`, `/`.
@@ -74,6 +76,7 @@ Cents sum { Cents{4} + Cents{6} };
 - Return by value for new results.
 
 ## 21.3 Overloading operators using normal functions
+[Overloading operators using normal functions](https://www.learncpp.com/cpp-tutorial/overloading-operators-using-normal-functions/)
 - A “normal function” overload is a non-member, non-friend function.
 - Use this when public accessors provide everything the operator needs.
 - This keeps encapsulation tighter than making the function a friend.
@@ -106,6 +109,7 @@ bool operator==(const Cents& a, const Cents& b) {
 - If the operator needs internals often, member or friend may be cleaner.
 
 ## 21.4 Overloading the I/O operators
+[Overloading the I/O operators](https://www.learncpp.com/cpp-tutorial/overloading-the-io-operators/)
 - Stream operators are usually overloaded as non-members.
 - `operator<<` takes `std::ostream&`.
 - `operator>>` takes `std::istream&`.
@@ -141,6 +145,7 @@ public:
 - Keep formatted output concise and predictable.
 
 ## 21.5 Overloading operators using member functions
+[Overloading operators using member functions](https://www.learncpp.com/cpp-tutorial/overloading-operators-using-member-functions/)
 - Member operator overloads are functions on the class itself.
 - The left operand becomes `*this`.
 - Best for operators that naturally modify the object:
@@ -180,6 +185,7 @@ public:
 - Return `*this` by reference for assignment-like operators.
 
 ## 21.6 Overloading unary operators
+[Overloading unary operators +, -, and !](https://www.learncpp.com/cpp-tutorial/overloading-unary-operators/)
 - Unary operators work on one operand.
 - Common overloads:
   - unary `-`
@@ -212,6 +218,7 @@ public:
 - Avoid strange meanings such as using `!` for “print debug info”.
 
 ## 21.7 Overloading the comparison operators
+[Overloading the comparison operators](https://www.learncpp.com/cpp-tutorial/overloading-the-comparison-operators/)
 - Equality and ordering should reflect the type’s logical value.
 - Common operators:
   - `==`
@@ -249,6 +256,7 @@ bool operator!=(const Cents& a, const Cents& b) {
 - If two objects compare equal, other behavior should usually agree with that.
 
 ## 21.8 Overloading the increment/decrement operators
+[Overloading the increment and decrement operators](https://www.learncpp.com/cpp-tutorial/overloading-the-increment-and-decrement-operators/)
 - Prefix forms:
   - `++x`
   - `--x`
@@ -284,6 +292,7 @@ public:
 - Keep behavior aligned with built-in types.
 
 ## 21.9 Overloading the subscript operator
+[Overloading the subscript operator](https://www.learncpp.com/cpp-tutorial/overloading-the-subscript-operator/)
 - `operator[]` lets objects act like arrays or maps.
 - This operator must be a member function.
 - Usually provide both:
@@ -315,6 +324,7 @@ public:
 - Use the const overload so read-only objects can still be indexed.
 
 ## 21.10 Overloading the parenthesis operator
+[Overloading the parenthesis operator](https://www.learncpp.com/cpp-tutorial/overloading-the-parenthesis-operator/)
 - `operator()` is the function call operator.
 - It lets an object behave like a callable function.
 - This operator must be a member function.
@@ -345,6 +355,7 @@ acc(3);   // 8
 - Lambdas are often simpler, but functors are still useful when state and type matter.
 
 ## 21.11 Overloading typecasts
+[Overloading typecasts](https://www.learncpp.com/cpp-tutorial/overloading-typecasts/)
 - Conversion operators define how an object converts to another type.
 - Syntax:
   - `operator Type()`
@@ -375,6 +386,7 @@ if (static_cast<bool>(state)) {
 - A type with too many conversions becomes hard to reason about.
 
 ## 21.12 The copy assignment operator
+[Overloading the assignment operator](https://www.learncpp.com/cpp-tutorial/overloading-the-assignment-operator/)
 - Copy assignment runs when an existing object is assigned from another object.
 - Typical signature:
   - `T& operator=(const T&)`
@@ -410,6 +422,7 @@ public:
 - Modern alternative: copy-and-swap or use standard containers/smart pointers.
 
 ## 21.13 Shallow vs deep copying
+[Shallow vs. deep copying](https://www.learncpp.com/cpp-tutorial/shallow-vs-deep-copying/)
 - **Shallow copy** copies member values as-is.
 - For raw pointers, that copies the pointer, not the pointed-to data.
 - This can cause:
@@ -444,6 +457,7 @@ public:
 - Rule of Zero is best: let standard members manage copying safely.
 
 ## 21.14 Overloading operators and function templates
+[Overloading operators and function templates](https://www.learncpp.com/cpp-tutorial/overloading-operators-and-function-templates/)
 - Operator overloads can be function templates.
 - Useful when the same operator logic works for many types.
 - Common examples:

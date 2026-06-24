@@ -3,6 +3,7 @@
 Current LearnCpp Chapter 8 sections found via web search. Note: there isn't a dedicated Chapter 8 `if constexpr` lesson in the current list, but it's included briefly below as a useful refresher.
 
 ## 8.1 Control flow introduction
+[Control flow introduction](https://www.learncpp.com/cpp-tutorial/control-flow-introduction/)
 - Control flow = the order statements execute.
 - Default flow is sequential: top to bottom.
 - Main tools:
@@ -28,6 +29,7 @@ int main()
 ```
 
 ## 8.2 If statements and blocks
+[If statements and blocks](https://www.learncpp.com/cpp-tutorial/if-statements-and-blocks/)
 - `if` executes a statement only if the condition is `true`.
 - A block is a group of statements inside `{}`.
 - Use braces even for single-line branches when clarity matters.
@@ -51,6 +53,7 @@ if constexpr (sizeof(int) == 4)
 ```
 
 ## 8.3 Else and else if
+[Common if statement problems](https://www.learncpp.com/cpp-tutorial/common-if-statement-problems/)
 - `else` runs when the `if` condition is false.
 - `else if` chains multiple conditions.
 - Conditions are checked top to bottom; first match wins.
@@ -66,7 +69,8 @@ else
     std::cout << "warm\n";
 ```
 
-## 8.4 Dangling else problem
+## 8.3 Dangling else problem
+[Common if statement problems](https://www.learncpp.com/cpp-tutorial/common-if-statement-problems/)
 - `else` binds to the nearest unmatched `if`.
 - Missing braces can make logic misleading.
 - Common `if` mistakes:
@@ -86,7 +90,8 @@ if (x > 0)
 }
 ```
 
-## 8.5 Switch statements
+## 8.5 Switch statement basics
+[Switch statement basics](https://www.learncpp.com/cpp-tutorial/switch-statement-basics/)
 - `switch` selects among integral-like values:
   - integers
   - `char`
@@ -114,6 +119,7 @@ default:
 ```
 
 ## 8.6 Switch fallthrough and scoping
+[Switch fallthrough and scoping](https://www.learncpp.com/cpp-tutorial/switch-fallthrough-and-scoping/)
 - Without `break`, execution falls through into the next case.
 - Use intentional fallthrough sparingly and clearly.
 - In modern C++, `[[fallthrough]];` documents intent.
@@ -140,6 +146,7 @@ default:
 ```
 
 ## 8.7 Goto statements
+[Goto statements](https://www.learncpp.com/cpp-tutorial/goto-statements/)
 - `goto` jumps to a labeled statement in the same function.
 - Usually avoid it:
   - hurts readability
@@ -157,7 +164,8 @@ cleanup:
 std::cout << "cleanup\n";
 ```
 
-## 8.8 Halts: std::exit() and std::abort()
+## 8.12 Halts: std::exit() and std::abort()
+[Halts (exiting your program early)](https://www.learncpp.com/cpp-tutorial/halts-exiting-your-program-early/)
 - Halts end the program immediately rather than returning normally.
 - `std::exit(code)`:
   - ends program with a status code
@@ -178,7 +186,7 @@ if (fatalCorruption)
     std::abort();
 ```
 
-## 8.9 Loops (overview)
+## 8.x Loops (overview)
 - Loops repeat work while a condition holds.
 - Choose based on intent:
   - `while`: unknown iteration count, pre-check
@@ -197,7 +205,8 @@ while (running)
 }
 ```
 
-## 8.10 While loops
+## 8.8 Introduction to loops and while statements
+[Introduction to loops and while statements](https://www.learncpp.com/cpp-tutorial/introduction-to-loops-and-while-statements/)
 - Syntax: `while (condition) statement;`
 - Condition is checked before each iteration.
 - May run zero times.
@@ -214,7 +223,8 @@ while (count > 0)
 }
 ```
 
-## 8.11 Do-while loops
+## 8.9 Do while statements
+[Do while statements](https://www.learncpp.com/cpp-tutorial/do-while-statements/)
 - `do-while` checks the condition after the body.
 - Always runs at least once.
 - Useful for menus and retry loops.
@@ -231,7 +241,8 @@ do
 while (value < 1 || value > 5);
 ```
 
-## 8.12 For loops and off-by-one errors
+## 8.10 For statements and off-by-one errors
+[For statements](https://www.learncpp.com/cpp-tutorial/for-statements/)
 - Compact structure: init; condition; update.
 - Best for counted loops.
 - Off-by-one bugs are common:
@@ -249,7 +260,8 @@ for (const auto& name : names)
     std::cout << name << '\n';
 ```
 
-## 8.13 Break and continue
+## 8.11 Break and continue
+[Break and continue](https://www.learncpp.com/cpp-tutorial/break-and-continue/)
 - `break` exits the nearest enclosing `switch` or loop.
 - `continue` skips to the next iteration of the nearest loop.
 - Useful, but too much use can make loops harder to follow.
@@ -268,7 +280,8 @@ for (int i{ 0 }; i < 10; ++i)
 }
 ```
 
-## 8.14 Random number generation
+## 8.14 Generating random numbers using Mersenne Twister
+[Generating random numbers using Mersenne Twister](https://www.learncpp.com/cpp-tutorial/generating-random-numbers-using-mersenne-twister/)
 - Prefer `<random>` over `std::rand()`.
 - Typical setup:
   - engine: generates pseudo-random numbers

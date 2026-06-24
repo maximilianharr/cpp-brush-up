@@ -1,6 +1,7 @@
 # Chapter 4: Fundamental Data Types
 
 ## 4.1 Introduction to fundamental data types
+[Introduction to fundamental data types](https://www.learncpp.com/cpp-tutorial/introduction-to-fundamental-data-types/)
 
 - Fundamental types are built into the language: `bool`, `char`, integer types, floating-point types, and `void`.
 - They describe what kind of value can be stored, how much memory is used, and what operations make sense.
@@ -21,6 +22,7 @@ char grade{ 'A' };
 ```
 
 ## 4.2 Void
+[Void](https://www.learncpp.com/cpp-tutorial/void/)
 
 - `void` means “no type”.
 - Common use: a function that returns no value.
@@ -42,6 +44,7 @@ int main()
 ```
 
 ## 4.3 Object sizes and the sizeof operator
+[Object sizes and the sizeof operator](https://www.learncpp.com/cpp-tutorial/object-sizes-and-the-sizeof-operator/)
 
 - `sizeof` returns the size of a type or object in bytes.
 - Result type: `std::size_t`.
@@ -72,6 +75,7 @@ std::cout << "x: " << sizeof(x) << " bytes\n";
 ```
 
 ## 4.4 Signed integers
+[Signed integers](https://www.learncpp.com/cpp-tutorial/signed-integers/)
 
 - Signed integers can hold negative and positive whole numbers.
 - Main signed integer types:
@@ -99,6 +103,7 @@ long long worldPopulation{ 8100000000LL };
 ```
 
 ## 4.5 Unsigned integers, and why to avoid them
+[Unsigned integers, and why to avoid them](https://www.learncpp.com/cpp-tutorial/unsigned-integers-and-why-to-avoid-them/)
 
 - Unsigned integers store only `0` and positive whole numbers.
 - They trade negative range for a larger positive range.
@@ -122,6 +127,7 @@ if (s < 1u) // surprising after conversions
 ```
 
 ## 4.6 Fixed-width integers and size_t
+[Fixed-width integers and size_t](https://www.learncpp.com/cpp-tutorial/fixed-width-integers-and-size-t/)
 
 - Header: `#include <cstdint>`.
 - Fixed-width integers give exact sizes when available:
@@ -151,6 +157,7 @@ std::size_t count{ sizeof(id) };
 ```
 
 ## 4.7 Introduction to scientific notation
+[Introduction to scientific notation](https://www.learncpp.com/cpp-tutorial/introduction-to-scientific-notation/)
 
 - Scientific notation is a compact way to write very large or very small numbers.
 - Form: significand × 10^exponent.
@@ -166,6 +173,7 @@ double alsoSmall{ 3.5E-5 };
 ```
 
 ## 4.8 Floating point numbers
+[Floating point numbers](https://www.learncpp.com/cpp-tutorial/floating-point-numbers/)
 
 - Floating-point types store real numbers with fractional parts.
 - Main types:
@@ -195,6 +203,7 @@ std::cout << (x + y) << '\n'; // often 0.30000000000000004-ish
 ```
 
 ## 4.9 Boolean values
+[Boolean values](https://www.learncpp.com/cpp-tutorial/boolean-values/)
 
 - `bool` stores `true` or `false`.
 - Used heavily in conditions and decision-making.
@@ -211,6 +220,7 @@ std::cout << std::boolalpha << isEqual;    // true
 ```
 
 ## 4.10 Introduction to if statements
+[Introduction to if statements](https://www.learncpp.com/cpp-tutorial/introduction-to-if-statements/)
 
 - `if` executes code only when its condition is true.
 - Conditions evaluate to `bool`.
@@ -232,6 +242,7 @@ else
 ```
 
 ## 4.11 Chars
+[Chars](https://www.learncpp.com/cpp-tutorial/chars/)
 
 - `char` stores a single character.
 - Character literals use single quotes: `'a'`, `'Z'`, `'0'`, `'\n'`.
@@ -251,6 +262,7 @@ std::cout << next << '\n';                 // B
 ```
 
 ## 4.12 Introduction to type conversion and static_cast
+[Introduction to type conversion and static_cast](https://www.learncpp.com/cpp-tutorial/introduction-to-type-conversion-and-static_cast/)
 
 - Type conversion changes a value from one type to another.
 - Implicit conversions happen automatically.
@@ -270,7 +282,8 @@ int b{ 2 };
 double result{ static_cast<double>(a) / b }; // 2.5
 ```
 
-## 4.x Chapter summary
+## 4.x Chapter 4 summary and quiz
+[Chapter 4 summary and quiz](https://www.learncpp.com/cpp-tutorial/chapter-4-summary-and-quiz/)
 
 - Fundamental types are the base vocabulary of C++ values.
 - `void` means “no type”.

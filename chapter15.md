@@ -1,6 +1,7 @@
 # Chapter 15: More on Classes
 
 ## 15.1 The hidden “this” pointer and member function chaining
+[The hidden "this" pointer and member function chaining](https://www.learncpp.com/cpp-tutorial/the-hidden-this-pointer-and-member-function-chaining/)
 - Every non-static member function gets an implicit `this` pointer.
 - `this` points to the current object, so `value = x;` is really `this->value = x;`.
 - In a `const` member function, `this` is effectively a pointer to const object data.
@@ -37,6 +38,7 @@ int result{ c.add(5).sub(2).get() }; // 3
 **Refresher:** use chaining for setters/builders; return `*this` by reference, not by value.
 
 ## 15.2 Classes and header files
+[Classes and header files](https://www.learncpp.com/cpp-tutorial/classes-and-header-files/)
 - Put the class declaration in a header (`.h` / `.hpp`).
 - Put non-trivial member function definitions in a source file (`.cpp`).
 - Use include guards or `#pragma once`.
@@ -75,7 +77,8 @@ void Point::print() const
 
 **Refresher:** class templates are a major exception: their full definitions usually live in headers.
 
-## 15.3 Nested types in classes
+## 15.3 Nested types (member types)
+[Nested types (member types)](https://www.learncpp.com/cpp-tutorial/nested-types-member-types/)
 - A class can define types inside itself: `enum`, `enum class`, `struct`, `class`, aliases.
 - Nested types help group related concepts with the owning class.
 - Access them with scope resolution: `ClassName::TypeName`.
@@ -108,6 +111,7 @@ light.set(TrafficLight::State::green);
 **Refresher:** nest a type when it only makes sense in the context of that class.
 
 ## 15.4 Introduction to destructors
+[Introduction to destructors](https://www.learncpp.com/cpp-tutorial/introduction-to-destructors/)
 - A destructor runs automatically when an object is destroyed.
 - Name: `~ClassName()`.
 - No parameters, no return type, only one destructor per class.
@@ -143,6 +147,7 @@ void useArray()
 **Refresher:** prefer owning standard-library types (`std::vector`, `std::string`, smart pointers) when possible — same RAII idea, less manual cleanup.
 
 ## 15.5 Class templates with member functions
+[Class templates with member functions](https://www.learncpp.com/cpp-tutorial/class-templates-with-member-functions/)
 - Class templates let one class work with many element types.
 - Member functions can be defined inside the class or outside it.
 - For out-of-class definitions, repeat the template parameter list.
@@ -176,6 +181,7 @@ Pair<int> p{ 3, 7 };
 **Refresher:** out-of-class template member definitions need both `template <typename T>` and `Class<T>::member`.
 
 ## 15.6 Static member variables
+[Static member variables](https://www.learncpp.com/cpp-tutorial/static-member-variables/)
 - A static data member belongs to the class, not to any one object.
 - All objects share the same static member.
 - Useful for counters, IDs, shared config, and class-wide state.
@@ -204,6 +210,7 @@ User b{};
 **Refresher:** static members exist even if no objects of the class exist.
 
 ## 15.7 Static member functions
+[Static member functions](https://www.learncpp.com/cpp-tutorial/static-member-functions/)
 - Static member functions are class-level functions.
 - They have no `this` pointer.
 - They can access only static members directly.
@@ -238,6 +245,7 @@ public:
 **Refresher:** if a function does not need object state, consider whether it should be `static`.
 
 ## 15.8 Friend non-member functions
+[Friend non-member functions](https://www.learncpp.com/cpp-tutorial/friend-non-member-functions/)
 - A friend function is not a member, but it may access private/protected members.
 - Declare friendship inside the class with the `friend` keyword.
 - Friendship is explicit and selective.
@@ -266,6 +274,7 @@ Vec2 operator+(const Vec2& a, const Vec2& b)
 **Refresher:** friend functions are still normal non-members for overload resolution and interface design.
 
 ## 15.9 Friend classes and friend member functions
+[Friend classes and friend member functions](https://www.learncpp.com/cpp-tutorial/friend-classes-and-friend-member-functions/)
 - A friend class gets access to private/protected members of another class.
 - You can also friend one specific member function instead of the whole class.
 - Friendship is **not** mutual, inherited, or transitive.
@@ -309,6 +318,7 @@ private:
 **Refresher:** friend one function when possible; friend a whole class only when broad access is truly intended.
 
 ## 15.10 Ref qualifiers
+[Ref qualifiers](https://www.learncpp.com/cpp-tutorial/ref-qualifiers/)
 - Ref qualifiers restrict member functions based on whether the object is an lvalue or rvalue.
 - `&` means “callable on lvalues”.
 - `&&` means “callable on rvalues”.

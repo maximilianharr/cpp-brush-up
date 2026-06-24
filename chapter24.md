@@ -1,6 +1,7 @@
 # Chapter 24: Inheritance
 
 ## 24.1 Introduction to inheritance
+[Introduction to inheritance](https://www.learncpp.com/cpp-tutorial/introduction-to-inheritance/)
 - Inheritance lets one class reuse data/functions from another.
 - **Base class** = existing class. **Derived class** = class built on top of it.
 - Best fit for an **is-a** relationship:
@@ -32,6 +33,7 @@ d.bark();  // Dog-specific
 ```
 
 ## 24.2 Basic inheritance in C++
+[Basic inheritance in C++](https://www.learncpp.com/cpp-tutorial/basic-inheritance-in-c/)
 - Inherit with `class Derived : public Base`.
 - `public` inheritance usually means “derived is a kind of base”.
 - Public base members stay public in the derived class.
@@ -62,7 +64,8 @@ public:
 };
 ```
 
-## 24.3 Order of construction of derived classes, base classes, and class members
+## 24.3 Order of construction of derived classes
+[Order of construction of derived classes](https://www.learncpp.com/cpp-tutorial/order-of-construction-of-derived-classes/)
 - Construction order is fixed:
   1. base classes
   2. member objects
@@ -99,6 +102,7 @@ struct Derived : Base
 ```
 
 ## 24.4 Constructors and initialization of derived classes
+[Constructors and initialization of derived classes](https://www.learncpp.com/cpp-tutorial/constructors-and-initialization-of-derived-classes/)
 - The derived constructor initializes the base part in its **member initializer list**.
 - If the base has no default constructor, the derived constructor **must** call a base constructor explicitly.
 - Initialize base data through the base constructor, not by assigning later in the derived body.
@@ -134,6 +138,7 @@ public:
 ```
 
 ## 24.5 Inheritance and access specifiers
+[Inheritance and access specifiers](https://www.learncpp.com/cpp-tutorial/inheritance-and-access-specifiers/)
 - Access in the **base** and access used for **inheritance** are different ideas.
 - Base member access:
   - `public`: accessible everywhere allowed by the object
@@ -177,6 +182,7 @@ PrivateDerived b{};
 ```
 
 ## 24.6 Calling base class functions from derived classes
+[Calling inherited functions and overriding behavior](https://www.learncpp.com/cpp-tutorial/calling-inherited-functions-and-overriding-behavior/)
 - Inherited functions can be called directly from a derived object.
 - If the derived class defines a function with the same name, use `Base::function()` to explicitly call the base version.
 - Qualified calls are useful to extend behavior instead of replacing it completely.
@@ -210,6 +216,7 @@ d.identify();
 ```
 
 ## 24.7 Overriding behaviors in derived classes
+[Calling inherited functions and overriding behavior](https://www.learncpp.com/cpp-tutorial/calling-inherited-functions-and-overriding-behavior/)
 - A derived class can provide its own version of an inherited function.
 - If the name/signature/qualifiers match, the derived version replaces the base behavior for derived objects.
 - If the signature does **not** match, you may get hiding or overloading instead of a true override.
@@ -238,6 +245,7 @@ c.Animal::speak(); // animal sound
 ```
 
 ## 24.8 Hiding inherited members
+[Calling inherited functions and overriding behavior](https://www.learncpp.com/cpp-tutorial/calling-inherited-functions-and-overriding-behavior/)
 - A derived declaration with the same name can hide base members of that name.
 - For functions, one derived overload can hide the entire base overload set.
 - For data members, the derived member hides the base member with the same name.
@@ -272,6 +280,7 @@ std::cout << d.Base::value << '\n';  // 1
 ```
 
 ## 24.9 Multiple inheritance
+[Multiple inheritance](https://www.learncpp.com/cpp-tutorial/multiple-inheritance/)
 - A class may inherit from more than one base class.
 - Useful when a type naturally combines multiple distinct roles/interfaces.
 - Construction order follows the base-class list left-to-right; destruction reverses it.

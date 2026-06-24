@@ -1,6 +1,7 @@
 # Chapter 25: Virtual Functions
 
 ## 25.1 Introduction to virtual functions
+[Virtual functions and polymorphism](https://www.learncpp.com/cpp-tutorial/virtual-functions/)
 
 - A **virtual function** enables runtime dispatch through a base **pointer or reference**.
 - Mark the function `virtual` in the base class; overrides stay virtual even if `virtual` is omitted later.
@@ -92,6 +93,7 @@ Related refresher notes:
 - The implementation mechanism is typically a per-class **vtable** and per-object **vptr**.
 
 ## 25.3 The override and final specifiers, and covariant return types
+[The override and final specifiers, and covariant return types](https://www.learncpp.com/cpp-tutorial/the-override-and-final-specifiers-and-covariant-return-types/)
 
 - `override` says: “this must override a base virtual function”.
 - If the signature does not match, the compiler errors out.
@@ -137,6 +139,7 @@ struct D2 : B {
 ```
 
 ## 25.4 Virtual destructors, virtual assignment, and overriding virtualization
+[Virtual destructors, virtual assignment, and overriding virtualization](https://www.learncpp.com/cpp-tutorial/virtual-destructors-virtual-assignment-and-overriding-virtualization/)
 
 - If a class is meant to be used polymorphically, give it a **virtual destructor**.
 - Deleting a derived object through a base pointer without a virtual destructor is **undefined behavior**.
@@ -186,7 +189,8 @@ struct Printer : virtual PoweredDevice {};
 struct Copier : Scanner, Printer {}; // one PoweredDevice subobject
 ```
 
-## 25.5 Pure virtual functions, abstract classes, and interfaces
+## 25.5 Pure virtual functions, abstract base classes, and interface classes
+[Pure virtual functions, abstract base classes, and interface classes](https://www.learncpp.com/cpp-tutorial/pure-virtual-functions-abstract-base-classes-and-interface-classes/)
 
 - A **pure virtual function** uses `= 0`.
 - A class with at least one pure virtual function is an **abstract base class**.

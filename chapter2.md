@@ -1,6 +1,7 @@
 # Chapter 2: C++ Basics: Functions and Files
 
 ## 2.1 Introduction to functions
+[Introduction to functions](https://www.learncpp.com/cpp-tutorial/introduction-to-functions/)
 - A **function** is a named block of code that performs one task.
 - Functions help you split programs into smaller, reusable pieces.
 - Every program starts in `main()`.
@@ -27,6 +28,7 @@ int main()
 ```
 
 ## 2.2 Function return values (value-returning functions)
+[Function return values (value-returning functions)](https://www.learncpp.com/cpp-tutorial/function-return-values-value-returning-functions/)
 - A value-returning function sends a result back to the caller with `return`.
 - The returned value must match the function's return type.
 - Returned values can be printed, stored, or used in expressions.
@@ -54,6 +56,7 @@ int main()
 ```
 
 ## 2.3 Void functions (non-value returning functions)
+[Void functions (non-value returning functions)](https://www.learncpp.com/cpp-tutorial/void-functions-non-value-returning-functions/)
 - A `void` function performs an action but does not produce a result.
 - Use `return;` only if you want to exit early.
 - Good for printing, prompting, logging, or other side-effect work.
@@ -83,6 +86,7 @@ int main()
 ```
 
 ## 2.4 Introduction to function parameters and arguments
+[Introduction to function parameters and arguments](https://www.learncpp.com/cpp-tutorial/introduction-to-function-parameters-and-arguments/)
 - A **parameter** is a variable in a function declaration/definition.
 - An **argument** is the value passed into the function call.
 - Parameter count, order, and types should match the call.
@@ -104,6 +108,7 @@ int main()
 ```
 
 ## 2.5 Introduction to local scope
+[Introduction to local scope](https://www.learncpp.com/cpp-tutorial/introduction-to-local-scope/)
 - Variables declared inside a function or block have **local scope**.
 - Local names are usable only from their declaration point to the end of the block.
 - Locals are created when the block begins execution and destroyed when it ends.
@@ -135,6 +140,7 @@ int main()
 ```
 
 ## 2.6 Why functions are useful, and how to use them effectively
+[Why functions are useful, and how to use them effectively](https://www.learncpp.com/cpp-tutorial/why-functions-are-useful-and-how-to-use-them-effectively/)
 - Functions reduce duplication and keep logic centralized.
 - They make code easier to read, test, debug, and change.
 - Prefer functions that do **one clear job**.
@@ -164,6 +170,7 @@ int main()
 ```
 
 ## 2.7 Forward declarations and definitions
+[Forward declarations and definitions](https://www.learncpp.com/cpp-tutorial/forward-declarations/)
 - The compiler must know a function exists before it is called.
 - A **forward declaration** introduces the function signature before the definition.
 - A **definition** provides the actual body.
@@ -187,6 +194,7 @@ int add(int x, int y) // definition
 ```
 
 ## 2.8 Programs with multiple code files
+[Programs with multiple code files](https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/)
 - Real programs are usually split across multiple `.cpp` files.
 - Each source file is compiled separately, then the **linker** combines them.
 - Put declarations in headers and definitions in source files.
@@ -215,6 +223,7 @@ int main()
 ```
 
 ## 2.9 Naming collisions and an introduction to namespaces
+[Naming collisions and an introduction to namespaces](https://www.learncpp.com/cpp-tutorial/naming-collisions-and-an-introduction-to-namespaces/)
 - A **naming collision** happens when two things with the same name are visible in the same scope.
 - **Namespaces** group names to avoid collisions.
 - The standard library lives in `std`.
@@ -248,6 +257,7 @@ int main()
 ```
 
 ## 2.10 Introduction to the preprocessor
+[Introduction to the preprocessor](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/)
 - The **preprocessor** runs before compilation.
 - It handles lines beginning with `#`.
 - Common directives:
@@ -269,6 +279,7 @@ int main()
 ```
 
 ## 2.11 Header files
+[Header files](https://www.learncpp.com/cpp-tutorial/header-files/)
 - Header files usually contain **declarations** shared across source files.
 - Typical contents:
   - function declarations
@@ -294,6 +305,7 @@ int subtract(int x, int y);
 ```
 
 ## 2.12 Header guards
+[Header guards](https://www.learncpp.com/cpp-tutorial/header-guards/)
 - If the same header is included more than once in one translation unit, duplicate declarations/definitions may cause errors.
 - **Header guards** prevent repeated inclusion.
 - Classic pattern:
@@ -327,6 +339,7 @@ struct Person
 ```
 
 ## 2.13 How to design your first programs
+[How to design your first programs](https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/)
 - Start with the problem, not the code.
 - Define:
   - required inputs

@@ -1,6 +1,6 @@
 # Chapter 7: Scope, Duration, and Linkage
 
-## 7.1 Introduction to scope, duration, and linkage
+## 7.x Introduction to scope, duration, and linkage
 - **Scope**: where an identifier can be used.
 - **Duration**: how long an object exists in memory.
 - **Linkage**: whether the same name can refer to the same object/function across scopes or files.
@@ -22,7 +22,8 @@ void f()
 }
 ```
 
-## 7.2 Local variables, scope, and duration
+## 7.3 Local variables, scope, and duration
+[Local variables](https://www.learncpp.com/cpp-tutorial/local-variables/)
 - Local variables live inside functions, parameters, and blocks.
 - Their **scope** usually starts at declaration and ends at the closing brace of the block.
 - Their **duration** is usually **automatic**: created on block entry, destroyed on block exit.
@@ -45,7 +46,8 @@ void print()
 }
 ```
 
-## 7.3 Static duration variables
+## 7.11 Static local variables
+[Static local variables](https://www.learncpp.com/cpp-tutorial/static-local-variables/)
 - Objects with **static duration** are created once and live until program termination.
 - Globals and static locals have static duration.
 - A **static local** keeps its value between function calls.
@@ -62,7 +64,8 @@ int nextId()
 // returns 1, then 2, then 3...
 ```
 
-## 7.4 Global variables and linkage
+## 7.4 Introduction to global variables
+[Introduction to global variables](https://www.learncpp.com/cpp-tutorial/introduction-to-global-variables/)
 - Global variables are declared at **namespace scope** (outside functions).
 - They have **static duration**.
 - Non-const globals usually have **external linkage** by default.
@@ -84,7 +87,8 @@ void run()
 }
 ```
 
-## 7.5 Internal linkage
+## 7.6 Internal linkage
+[Internal linkage](https://www.learncpp.com/cpp-tutorial/internal-linkage/)
 - **Internal linkage** means a name is usable only within the current translation unit (`.cpp` file).
 - Good for helpers and globals that should not be shared across files.
 - Namespace-scope `const` objects have internal linkage by default.
@@ -101,7 +105,8 @@ static void logMessage()
 }
 ```
 
-## 7.6 External linkage
+## 7.7 External linkage and variable forward declarations
+[External linkage and variable forward declarations](https://www.learncpp.com/cpp-tutorial/external-linkage-and-variable-forward-declarations/)
 - **External linkage** means the same name can be referred to from other translation units.
 - Most non-const namespace-scope variables and normal functions have external linkage by default.
 - Use `extern` for a declaration when the definition lives elsewhere.
@@ -120,7 +125,7 @@ int g_limit{100};
 std::cout << g_limit << '\n';
 ```
 
-## 7.7 The static keyword (in global and local scope)
+## 7.x The static keyword (in global and local scope)
 - `static` has different meanings depending on context.
 - On a **local variable**: gives **static duration**.
 - On a **namespace-scope variable/function**: gives **internal linkage**.
@@ -137,7 +142,8 @@ void tick()
 static int s_state{0};    // file-local global
 ```
 
-## 7.8 Variable shadowing (name hiding)
+## 7.5 Variable shadowing (name hiding)
+[Variable shadowing (name hiding)](https://www.learncpp.com/cpp-tutorial/variable-shadowing-name-hiding/)
 - An inner declaration can **shadow** an outer declaration with the same name.
 - Once shadowed, the outer name is hidden inside the inner scope.
 - Shadowing can happen with local variables, parameters, and globals.
@@ -155,7 +161,8 @@ void demo()
 }
 ```
 
-## 7.9 Namespace scope and the scope resolution operator (::)
+## 7.2 User-defined namespaces and the scope resolution operator
+[User-defined namespaces and the scope resolution operator](https://www.learncpp.com/cpp-tutorial/user-defined-namespaces-and-the-scope-resolution-operator/)
 - Names at namespace scope are accessed with the **scope resolution operator**.
 - `std::cout` means `cout` inside namespace `std`.
 - `::value` means `value` in the **global namespace**.
@@ -174,7 +181,8 @@ std::cout << ::value << '\n';      // global value
 std::cout << math::value << '\n';  // namespace value
 ```
 
-## 7.10 Unnamed namespaces and the inline keyword for variables
+## 7.14 Unnamed namespaces and the inline keyword for variables
+[Unnamed and inline namespaces](https://www.learncpp.com/cpp-tutorial/unnamed-and-inline-namespaces/)
 - An **unnamed namespace** gives internal linkage to its members.
 - It is useful for file-local helpers, variables, functions, and types.
 - `inline` variables (C++17) allow a variable definition in a header without violating the one-definition rule.
@@ -191,7 +199,8 @@ namespace
 inline constexpr int maxUsers{64}; // okay in a header
 ```
 
-## 7.11 Using declarations and using directives
+## 7.13 Using declarations and using directives
+[Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/)
 - A **using declaration** imports one specific name:
   - `using std::cout;`
 - A **using directive** imports all names from a namespace:
@@ -214,6 +223,7 @@ void print()
 ```
 
 ## 7.12 Scope, duration, and linkage summary
+[Scope, duration, and linkage summary](https://www.learncpp.com/cpp-tutorial/scope-duration-and-linkage-summary/)
 - **Local variable**: block scope, automatic duration, no linkage.
 - **Static local**: block scope, static duration, no linkage.
 - **Global/non-const namespace variable**: namespace scope, static duration, usually external linkage.

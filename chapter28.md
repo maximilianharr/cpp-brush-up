@@ -1,6 +1,7 @@
 # Chapter 28: Input and Output (I/O)
 
 ## 28.1 Input and output (I/O) streams
+[Input and output (I/O) streams](https://www.learncpp.com/cpp-tutorial/input-and-output-io-streams/)
 
 - C++ I/O lives in the standard library, mainly `<iostream>`, not the core language.
 - A **stream** is a flow of bytes between your program and some device/source.
@@ -39,6 +40,7 @@ int main()
 **Refresher:** think “same stream interface, different backing source”.
 
 ## 28.2 Input with istream
+[Input with istream](https://www.learncpp.com/cpp-tutorial/input-with-istream/)
 
 - `operator>>` reads formatted input into typed variables.
 - Extraction usually **skips leading whitespace**.
@@ -79,6 +81,7 @@ std::cin.ignore(1000, '\n'); // discard up to newline
 **Rule of thumb:** `>>` for tokenized input, `getline()` for line-oriented input.
 
 ## 28.3 Output with ostream and ios
+[Output with ostream and ios](https://www.learncpp.com/cpp-tutorial/output-with-ostream-and-ios/)
 
 - `operator<<` performs formatted output.
 - Prefer `'\n'` over `std::endl` unless you specifically need a flush.
@@ -118,6 +121,7 @@ std::cout << "line 2" << std::endl; // newline + flush
 **Refresher:** output formatting is mostly “set stream state, then print”.
 
 ## 28.4 Stream classes for strings
+[Stream classes for strings](https://www.learncpp.com/cpp-tutorial/stream-classes-for-strings/)
 
 - `<sstream>` gives stream interfaces backed by strings.
 - Main types:
@@ -166,6 +170,7 @@ ss >> a >> b;
 **Refresher:** string streams let you reuse normal stream syntax without actual files/console I/O.
 
 ## 28.5 Stream states and input validation
+[Stream states and input validation](https://www.learncpp.com/cpp-tutorial/stream-states-and-input-validation/)
 
 - Streams track error/state flags:
   - `goodbit`: no error
@@ -221,6 +226,7 @@ if (std::cin.eof())
 **Refresher:** failed streams stay failed until you explicitly recover them.
 
 ## 28.6 Basic file I/O
+[Basic file I/O](https://www.learncpp.com/cpp-tutorial/basic-file-io/)
 
 - File streams live in `<fstream>`.
 - Main types:
@@ -275,6 +281,7 @@ while (std::getline(inFile, line))
 **Refresher:** file streams behave like `cin`/`cout`, just with a file as the source/sink.
 
 ## 28.7 Random file I/O
+[Random file I/O](https://www.learncpp.com/cpp-tutorial/random-file-io/)
 
 - Sequential I/O reads/writes in order; random I/O jumps directly to positions.
 - Position functions:

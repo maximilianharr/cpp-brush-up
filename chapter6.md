@@ -1,6 +1,7 @@
 # Chapter 6: Operators
 
 ## 6.1 Operator precedence and associativity
+[Operator precedence and associativity](https://www.learncpp.com/cpp-tutorial/operator-precedence-and-associativity/)
 
 - **Precedence** decides which operator binds first.
 - **Associativity** breaks ties when precedence is the same.
@@ -35,6 +36,7 @@ a = b = c = 0;               // a = (b = (c = 0))
 - Prefer explicit grouping when an expression is even slightly non-obvious.
 
 ## 6.2 Arithmetic operators
+[Arithmetic operators](https://www.learncpp.com/cpp-tutorial/arithmetic-operators/)
 
 - Unary: `+x`, `-x`
 - Binary: `+ - * / %`
@@ -61,6 +63,7 @@ double y{ 7.0 / 4 };     // 1.75
   - unsigned arithmetic wraps modulo `2^N`
 
 ## 6.3 Remainder and exponentiation
+[Remainder and Exponentiation](https://www.learncpp.com/cpp-tutorial/remainder-and-exponentiation/)
 
 - Remainder uses `%` and works with **integral** operands.
 - Result sign follows the **left operand** (dividend).
@@ -87,6 +90,7 @@ int b{ 3 ^ 4 };                   // 7, XOR -- not 81
 - For exact integer powers, prefer integer-specific logic when practical.
 
 ## 6.4 Increment/decrement operators, and side effects
+[Increment/decrement operators, and side effects](https://www.learncpp.com/cpp-tutorial/increment-decrement-operators-and-side-effects/)
 
 - `++x` / `--x`: modify first, then yield the updated value.
 - `x++` / `x--`: yield the old value, then modify.
@@ -121,6 +125,7 @@ int n{ i };
 ```
 
 ## 6.5 The comma operator
+[The comma operator](https://www.learncpp.com/cpp-tutorial/the-comma-operator/)
 
 - The comma operator evaluates the left operand, discards it, then evaluates and returns the right operand.
 - It is **different** from commas used as separators in declarations, argument lists, or initializer lists.
@@ -141,7 +146,8 @@ for (int i{ 0 }, j{ 9 }; i < j; ++i, --j)
 
 - Outside narrow cases like `for`, prefer clarity over cleverness.
 
-## 6.6 Relational operators and floating point comparisons
+## 6.7 Relational operators and floating point comparisons
+[Relational operators and floating point comparisons](https://www.learncpp.com/cpp-tutorial/relational-operators-and-floating-point-comparisons/)
 
 - Relational operators: `< <= > >=`
 - Equality operators: `== !=`
@@ -184,7 +190,8 @@ bool approximatelyEqual(double a, double b, double eps = 1e-12)
 
 - Use approximate comparison for computed floats; direct `==` is okay mainly for exact sentinel-style values.
 
-## 6.7 Logical operators
+## 6.8 Logical operators
+[Logical operators](https://www.learncpp.com/cpp-tutorial/logical-operators/)
 
 - Logical NOT: `!`
 - Logical AND: `&&`
@@ -215,7 +222,8 @@ if (ptr && ptr->isValid())
 - This is useful for guards and efficient condition checks.
 - Don't confuse logical `&& ||` with bitwise `& |`.
 
-## 6.x Chapter summary
+## 6.x Chapter 6 summary and quiz
+[Chapter 6 summary and quiz](https://www.learncpp.com/cpp-tutorial/chapter-6-summary-and-quiz/)
 
 - Precedence and associativity explain grouping; parentheses improve clarity.
 - Arithmetic operators are straightforward, but integer division truncates.

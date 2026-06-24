@@ -4,6 +4,7 @@ Concise refresher based on the current LearnCpp Chapter 20 lesson list (quizzes 
 Note: LearnCpp does not currently have a separate Chapter 20 section for `std::function`, so it is included where it naturally fits.
 
 ## 20.1 Function Pointers
+[Function Pointers](https://www.learncpp.com/cpp-tutorial/function-pointers/)
 
 - A **function pointer** stores the address of a function.
 - The pointer type must match the function signature exactly.
@@ -75,6 +76,7 @@ Use:
 - **`std::function`** when you need to store/pass arbitrary callables with one interface
 
 ## 20.2 The stack and the heap
+[The Stack and the Heap](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
 - The **stack** holds automatic storage:
   - function parameters
@@ -124,6 +126,7 @@ Rule of thumb:
 - runtime-sized / shared / long-lived dynamic data -> heap-managed objects
 
 ## 20.3 Recursion
+[Recursion](https://www.learncpp.com/cpp-tutorial/recursion/)
 
 - A **recursive function** calls itself.
 - Every recursive algorithm needs:
@@ -177,6 +180,7 @@ Important:
 - avoid recursion depth that depends on large unbounded input unless you know it is safe
 
 ## 20.4 Main and command line arguments
+[Command line arguments](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
 
 - `main` can take command line arguments:
   - `int argc`
@@ -231,6 +235,7 @@ Typical uses:
 - build/test tool options
 
 ## 20.5 Ellipsis and why to avoid them
+[Ellipsis (and why to avoid them)](https://www.learncpp.com/cpp-tutorial/ellipsis-and-why-to-avoid-them/)
 
 - **Ellipsis** (`...`) enables old-style C variadic functions.
 - These functions usually use `<cstdarg>`:
@@ -287,6 +292,7 @@ Rule of thumb:
 - in normal C++, prefer type-safe alternatives
 
 ## 20.6 Introduction to lambdas (anonymous functions)
+[Introduction to lambdas (anonymous functions)](https://www.learncpp.com/cpp-tutorial/introduction-to-lambdas-anonymous-functions/)
 
 - A **lambda** is an unnamed function object created inline.
 - Great for short local behavior, especially callbacks and predicates.
@@ -351,6 +357,7 @@ Use a named function instead when:
 - the body is long enough to deserve a real name
 
 ## 20.7 Lambda captures
+[Lambda captures](https://www.learncpp.com/cpp-tutorial/lambda-captures/)
 
 - A lambda can **capture** variables from the surrounding scope.
 - Capture by value:
