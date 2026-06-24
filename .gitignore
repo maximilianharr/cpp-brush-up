@@ -1,1 +1,34 @@
 .claude/
+
+# coding folder build artifacts (Linux + Windows)
+coding/build/
+coding/cmake-build-*/
+coding/CMakeFiles/
+coding/CMakeCache.txt
+coding/cmake_install.cmake
+coding/compile_commands.json
+coding/Makefile
+coding/*.dir/
+
+# Visual Studio / MSVC outputs
+coding/Debug/
+coding/Release/
+coding/x64/
+coding/*.sln
+coding/*.vcxproj
+coding/*.vcxproj.filters
+coding/*.vcxproj.user
+coding/*.pdb
+coding/*.ilk
+coding/*.exp
+
+# Generic binary/object outputs
+coding/*.o
+coding/*.obj
+coding/*.a
+coding/*.lib
+coding/*.so
+coding/*.dll
+coding/*.dylib
+coding/*.exe
+coding/*.out
