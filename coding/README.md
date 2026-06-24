@@ -9,10 +9,12 @@ Every `*.cpp` file placed directly in `src/` is built automatically as its own e
 
 ### Linux
 ```bash
-clear && cmake -S . -B build && cmake --build build && ./build/main
+cd coding
+clear && cmake -S . -B build && cmake --build build && ./build/chapter00
 ```
 
 ### Windows
 ```powershell
+cd coding
 clear; cmake -S . -B build; cmake --build build --config Release; .\build\Release\lesson01.exe
 ```
