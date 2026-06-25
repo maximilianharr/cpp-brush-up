@@ -21,5 +21,5 @@ clear && cmake -S . -B build && cmake --build build && ./build/chapter00
 Windows
 ```powershell
 cd coding
-clear; cmake -S . -B build; cmake --build build --config Release; .\build\Release\lesson01.exe
+clear; cmake -S . -B build; cmake --build build --config Release; .\build\Release\chapter01.exe
 ```
