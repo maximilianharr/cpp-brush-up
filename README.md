@@ -23,3 +23,17 @@ Windows
 cd coding
 clear; cmake -S . -B build; cmake --build build --config Release; .\build\Release\chapter01.exe
 ```
+
+### Debugging chapter03 with gdb
+
+Linux
+```bash
+cd coding
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug && cmake --build build && gdb ./build/chapter03
+```
+
+Windows (MinGW + gdb)
+```powershell
+cd coding
+cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug; cmake --build build; gdb .\build\chapter03.exe
+```
