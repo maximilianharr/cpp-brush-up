@@ -50,3 +50,4 @@ Linux
 3. Press 'F5' to run compilation and start debugging
   - .vscode/tasks.json — cmake debug build task
   - .vscode/launch.json — "Debug chapter03" config (F5)
+4. Press `Ctrl Shift D` to see Run & Debug view

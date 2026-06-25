@@ -23,6 +23,16 @@ int main()
      * print a
      * set var a = 30
      * continue
+     * backtrace
      */
+
+    /* using VS code
+     * press F5 > triggers tasks.json / launch.json
+     * User VS code interface to set breakpoints and see variables / call
+     * see `Ctrl Shift D`
+     */
+
+    // 3.10
+
     return 0;
 }
