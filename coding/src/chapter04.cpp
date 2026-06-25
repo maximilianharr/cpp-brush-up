@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdint>
 namespace math
 {
     int max(int a, int b)
@@ -16,5 +17,20 @@ int main()
     int a{0};
 
     // 4.6
-    std::cout << "helloo" << std::endl;
+    int32_t id{12345};
+    std::cout << id << std::endl;
+
+    double avogadro{6.022e23};
+    std::cout << avogadro << std::endl;
+
+    // 4.9, 4.10
+    bool isValid{3 == 3};
+    if (isValid)
+    {
+        std::cout << isValid << "|" << std::boolalpha << isValid << std::endl;
+    }
+
+    // 4.11, 4.12
+    char c{'X'};
+    std::cout << static_cast<int>(c) << '\n';
 }
