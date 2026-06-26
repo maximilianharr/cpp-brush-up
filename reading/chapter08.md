@@ -164,47 +164,6 @@ cleanup:
 std::cout << "cleanup\n";
 ```
 
-## 8.12 Halts: std::exit() and std::abort()
-[Halts (exiting your program early)](https://www.learncpp.com/cpp-tutorial/halts-exiting-your-program-early/)
-- Halts end the program immediately rather than returning normally.
-- `std::exit(code)`:
-  - ends program with a status code
-  - runs static object cleanup and `atexit` handlers
-  - does not unwind local automatic variables in the current stack
-- `std::abort()`:
-  - abnormal termination
-  - typically no cleanup guarantees
-- Prefer returning from `main()` when practical.
-
-```cpp
-#include <cstdlib>
-
-if (!configLoaded)
-    std::exit(1);
-
-if (fatalCorruption)
-    std::abort();
-```
-
-## 8.x Loops (overview)
-- Loops repeat work while a condition holds.
-- Choose based on intent:
-  - `while`: unknown iteration count, pre-check
-  - `do-while`: must run at least once
-  - `for`: counting / compact loop control
-- Watch loop invariants:
-  - initialization
-  - condition
-  - update
-- Infinite loops need an internal exit path.
-
-```cpp
-while (running)
-{
-    process();
-}
-```
-
 ## 8.8 Introduction to loops and while statements
 [Introduction to loops and while statements](https://www.learncpp.com/cpp-tutorial/introduction-to-loops-and-while-statements/)
 - Syntax: `while (condition) statement;`
@@ -277,6 +236,47 @@ for (int i{ 0 }; i < 10; ++i)
         continue;
 
     std::cout << i << ' ';
+}
+```
+
+## 8.12 Halts: std::exit() and std::abort()
+[Halts (exiting your program early)](https://www.learncpp.com/cpp-tutorial/halts-exiting-your-program-early/)
+- Halts end the program immediately rather than returning normally.
+- `std::exit(code)`:
+  - ends program with a status code
+  - runs static object cleanup and `atexit` handlers
+  - does not unwind local automatic variables in the current stack
+- `std::abort()`:
+  - abnormal termination
+  - typically no cleanup guarantees
+- Prefer returning from `main()` when practical.
+
+```cpp
+#include <cstdlib>
+
+if (!configLoaded)
+    std::exit(1);
+
+if (fatalCorruption)
+    std::abort();
+```
+
+## 8.x Loops (overview)
+- Loops repeat work while a condition holds.
+- Choose based on intent:
+  - `while`: unknown iteration count, pre-check
+  - `do-while`: must run at least once
+  - `for`: counting / compact loop control
+- Watch loop invariants:
+  - initialization
+  - condition
+  - update
+- Infinite loops need an internal exit path.
+
+```cpp
+while (running)
+{
+    process();
 }
 ```
 

@@ -22,6 +22,26 @@ void f()
 }
 ```
 
+## 7.2 User-defined namespaces and the scope resolution operator
+[User-defined namespaces and the scope resolution operator](https://www.learncpp.com/cpp-tutorial/user-defined-namespaces-and-the-scope-resolution-operator/)
+- Names at namespace scope are accessed with the **scope resolution operator**.
+- `std::cout` means `cout` inside namespace `std`.
+- `::value` means `value` in the **global namespace**.
+- Use qualification to disambiguate hidden names and avoid collisions.
+- Namespaces help organize code and reduce accidental name clashes.
+
+```cpp
+int value{7};
+
+namespace math
+{
+    int value{42};
+}
+
+std::cout << ::value << '\n';      // global value
+std::cout << math::value << '\n';  // namespace value
+```
+
 ## 7.3 Local variables, scope, and duration
 [Local variables](https://www.learncpp.com/cpp-tutorial/local-variables/)
 - Local variables live inside functions, parameters, and blocks.
@@ -46,24 +66,6 @@ void print()
 }
 ```
 
-## 7.11 Static local variables
-[Static local variables](https://www.learncpp.com/cpp-tutorial/static-local-variables/)
-- Objects with **static duration** are created once and live until program termination.
-- Globals and static locals have static duration.
-- A **static local** keeps its value between function calls.
-- Static locals are initialized once, then reused.
-- Great for counters, cached state, one-time setup helpers; use carefully to avoid hidden state.
-
-```cpp
-int nextId()
-{
-    static int s_id{0};  // initialized once
-    return ++s_id;       // remembers prior value
-}
-
-// returns 1, then 2, then 3...
-```
-
 ## 7.4 Introduction to global variables
 [Introduction to global variables](https://www.learncpp.com/cpp-tutorial/introduction-to-global-variables/)
 - Global variables are declared at **namespace scope** (outside functions).
@@ -84,6 +86,25 @@ void run()
 {
     if (g_mode == 1)
         std::cout << "fast\n";
+}
+```
+
+## 7.5 Variable shadowing (name hiding)
+[Variable shadowing (name hiding)](https://www.learncpp.com/cpp-tutorial/variable-shadowing-name-hiding/)
+- An inner declaration can **shadow** an outer declaration with the same name.
+- Once shadowed, the outer name is hidden inside the inner scope.
+- Shadowing can happen with local variables, parameters, and globals.
+- It is legal, but often hurts readability.
+- Prefer distinct names unless the shadowing is tiny and obvious.
+
+```cpp
+int value{1};
+
+void demo()
+{
+    int value{2};          // hides global value
+    std::cout << value;    // 2
+    std::cout << ::value;  // 1
 }
 ```
 
@@ -142,84 +163,22 @@ void tick()
 static int s_state{0};    // file-local global
 ```
 
-## 7.5 Variable shadowing (name hiding)
-[Variable shadowing (name hiding)](https://www.learncpp.com/cpp-tutorial/variable-shadowing-name-hiding/)
-- An inner declaration can **shadow** an outer declaration with the same name.
-- Once shadowed, the outer name is hidden inside the inner scope.
-- Shadowing can happen with local variables, parameters, and globals.
-- It is legal, but often hurts readability.
-- Prefer distinct names unless the shadowing is tiny and obvious.
+## 7.11 Static local variables
+[Static local variables](https://www.learncpp.com/cpp-tutorial/static-local-variables/)
+- Objects with **static duration** are created once and live until program termination.
+- Globals and static locals have static duration.
+- A **static local** keeps its value between function calls.
+- Static locals are initialized once, then reused.
+- Great for counters, cached state, one-time setup helpers; use carefully to avoid hidden state.
 
 ```cpp
-int value{1};
-
-void demo()
+int nextId()
 {
-    int value{2};          // hides global value
-    std::cout << value;    // 2
-    std::cout << ::value;  // 1
-}
-```
-
-## 7.2 User-defined namespaces and the scope resolution operator
-[User-defined namespaces and the scope resolution operator](https://www.learncpp.com/cpp-tutorial/user-defined-namespaces-and-the-scope-resolution-operator/)
-- Names at namespace scope are accessed with the **scope resolution operator**.
-- `std::cout` means `cout` inside namespace `std`.
-- `::value` means `value` in the **global namespace**.
-- Use qualification to disambiguate hidden names and avoid collisions.
-- Namespaces help organize code and reduce accidental name clashes.
-
-```cpp
-int value{7};
-
-namespace math
-{
-    int value{42};
+    static int s_id{0};  // initialized once
+    return ++s_id;       // remembers prior value
 }
 
-std::cout << ::value << '\n';      // global value
-std::cout << math::value << '\n';  // namespace value
-```
-
-## 7.14 Unnamed namespaces and the inline keyword for variables
-[Unnamed and inline namespaces](https://www.learncpp.com/cpp-tutorial/unnamed-and-inline-namespaces/)
-- An **unnamed namespace** gives internal linkage to its members.
-- It is useful for file-local helpers, variables, functions, and types.
-- `inline` variables (C++17) allow a variable definition in a header without violating the one-definition rule.
-- This is especially useful for shared constants.
-- `inline` variables are safer than putting normal global definitions in headers.
-
-```cpp
-namespace
-{
-    int cacheHits{0};   // visible only in this translation unit
-}
-
-// constants.h
-inline constexpr int maxUsers{64}; // okay in a header
-```
-
-## 7.13 Using declarations and using directives
-[Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/)
-- A **using declaration** imports one specific name:
-  - `using std::cout;`
-- A **using directive** imports all names from a namespace:
-  - `using namespace std;`
-- Prefer **using declarations** in small scopes.
-- Avoid `using namespace ...` in headers and usually avoid it at global scope in source files too.
-- Directives can cause name collisions and make code harder to reason about.
-
-```cpp
-using std::cout;   // one name
-using std::endl;
-
-void print()
-{
-    cout << "hello" << endl;
-}
-
-// Avoid in headers:
-// using namespace std;
+// returns 1, then 2, then 3...
 ```
 
 ## 7.12 Scope, duration, and linkage summary
@@ -252,4 +211,45 @@ int main()
     static int runCount{0};    // persists, but only visible here
     ++runCount;
 }
+```
+
+## 7.13 Using declarations and using directives
+[Using declarations and using directives](https://www.learncpp.com/cpp-tutorial/using-declarations-and-using-directives/)
+- A **using declaration** imports one specific name:
+  - `using std::cout;`
+- A **using directive** imports all names from a namespace:
+  - `using namespace std;`
+- Prefer **using declarations** in small scopes.
+- Avoid `using namespace ...` in headers and usually avoid it at global scope in source files too.
+- Directives can cause name collisions and make code harder to reason about.
+
+```cpp
+using std::cout;   // one name
+using std::endl;
+
+void print()
+{
+    cout << "hello" << endl;
+}
+
+// Avoid in headers:
+// using namespace std;
+```
+
+## 7.14 Unnamed namespaces and the inline keyword for variables
+[Unnamed and inline namespaces](https://www.learncpp.com/cpp-tutorial/unnamed-and-inline-namespaces/)
+- An **unnamed namespace** gives internal linkage to its members.
+- It is useful for file-local helpers, variables, functions, and types.
+- `inline` variables (C++17) allow a variable definition in a header without violating the one-definition rule.
+- This is especially useful for shared constants.
+- `inline` variables are safer than putting normal global definitions in headers.
+
+```cpp
+namespace
+{
+    int cacheHits{0};   // visible only in this translation unit
+}
+
+// constants.h
+inline constexpr int maxUsers{64}; // okay in a header
 ```
