@@ -17,7 +17,7 @@ target_include_directories(cpp_refresh_lib
     ${PROJECT_SOURCE_DIR}/include
 )
 
-target_compile_features(cpp_refresh_lib PUBLIC cxx_std_17)
+target_compile_features(cpp_refresh_lib PUBLIC cxx_std_23)
 
 foreach(app_source IN LISTS APP_SOURCES)
   get_filename_component(app_name "${app_source}" NAME_WE)
