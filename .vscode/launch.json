@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debugging program",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/coding/build/chapter06",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/coding",
+      "MIMode": "gdb",
+      "preLaunchTask": "cmake build debug"
+    }
+  ]
+}
