@@ -5,7 +5,7 @@
       "name": "Debugging program",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/coding/build/chapter12",
+      "program": "${workspaceFolder}/coding/build/chapter13",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}/coding",
